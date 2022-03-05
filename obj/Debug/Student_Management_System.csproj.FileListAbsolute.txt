@@ -1,0 +1,10 @@
+D:\DUc\Winform\Student_Management_System\LoginForm\bin\Debug\LoginForm.exe.config
+D:\DUc\Winform\Student_Management_System\LoginForm\bin\Debug\LoginForm.exe
+D:\DUc\Winform\Student_Management_System\LoginForm\bin\Debug\LoginForm.pdb
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.csproj.AssemblyReference.cache
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.Form1.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.Properties.Resources.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.csproj.GenerateResource.cache
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.csproj.CoreCompileInputs.cache
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.exe
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.pdb
