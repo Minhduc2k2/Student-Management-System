@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginForm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,23 @@ namespace Student_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //Application.Run(new LoginForm());
+            //Application.Run(new AddStudentForm());
+            LoginForm loginForm = new LoginForm();
+            if(loginForm.ShowDialog() == DialogResult.Yes)
+            {
+                Application.Run(new RegisterForm());
+            }
+            if(loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new MainForm());
+            }
+            else
+            {
+                Application.Exit();
+            }
+
         }
     }
 }
