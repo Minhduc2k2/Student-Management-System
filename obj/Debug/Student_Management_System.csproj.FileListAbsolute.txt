@@ -11,3 +11,6 @@ D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.MainForm.
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.AddStudentForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.LoginForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.RegisterForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.StudentListForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.UpdateDeleteStudentForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.FirstNameForm.resources

@@ -21,11 +21,12 @@ namespace Student_Management_System
             //Application.Run(new LoginForm());
             //Application.Run(new AddStudentForm());
             LoginForm loginForm = new LoginForm();
-            if(loginForm.ShowDialog() == DialogResult.Yes)
+            loginForm.ShowDialog();
+            if (loginForm.DialogResult ==  DialogResult.Yes)
             {
                 Application.Run(new RegisterForm());
             }
-            if(loginForm.ShowDialog() == DialogResult.OK)
+            if(loginForm.DialogResult == DialogResult.OK)
             {
                 Application.Run(new MainForm());
             }

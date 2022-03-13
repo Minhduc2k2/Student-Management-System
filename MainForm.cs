@@ -23,5 +23,11 @@ namespace LoginForm
             AddStudentForm addStudentForm = new AddStudentForm();
             addStudentForm.Show(this);
         }
+
+        private void studentListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentListForm studentListForm = new StudentListForm();
+            studentListForm.Show(this);
+        }
     }
 }

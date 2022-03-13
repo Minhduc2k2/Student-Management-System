@@ -90,6 +90,7 @@ namespace LoginForm
             this.studentListToolStripMenuItem.Name = "studentListToolStripMenuItem";
             this.studentListToolStripMenuItem.Size = new System.Drawing.Size(322, 32);
             this.studentListToolStripMenuItem.Text = "Student List";
+            this.studentListToolStripMenuItem.Click += new System.EventHandler(this.studentListToolStripMenuItem_Click);
             // 
             // staticsToolStripMenuItem
             // 
