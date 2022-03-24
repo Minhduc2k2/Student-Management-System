@@ -103,7 +103,6 @@ namespace Student_Management_System
             this.TextBoxStudentId.Size = new System.Drawing.Size(249, 23);
             this.TextBoxStudentId.TabIndex = 7;
             this.TextBoxStudentId.Tag = "";
-            //this.TextBoxStudentId.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TextBoxStudentId_ControlAdded);
             // 
             // panel1
             // 
@@ -290,13 +289,13 @@ namespace Student_Management_System
             this.RadioButtonFemale.Name = "RadioButtonFemale";
             this.RadioButtonFemale.Size = new System.Drawing.Size(98, 29);
             this.RadioButtonFemale.TabIndex = 1;
-            this.RadioButtonFemale.TabStop = true;
             this.RadioButtonFemale.Text = "Female";
             this.RadioButtonFemale.UseVisualStyleBackColor = true;
             // 
             // RadioButtonMale
             // 
             this.RadioButtonMale.AutoSize = true;
+            this.RadioButtonMale.Checked = true;
             this.RadioButtonMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioButtonMale.Location = new System.Drawing.Point(4, 10);
             this.RadioButtonMale.Name = "RadioButtonMale";

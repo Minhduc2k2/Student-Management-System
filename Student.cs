@@ -40,6 +40,47 @@ namespace LoginForm
                 return false;
             }
         }
+        public bool updateStudent(int Id, string fname, string lname, DateTime bdate, string gender, string phone, string address, MemoryStream picture)
+        {
+            SqlCommand command = new SqlCommand("UPDATE student SET fname = @fname, lname =@lname , bdate = @bdate, gender = @gender, phone =@phone, address =@address, picture =@picture WHERE id = @id", mydb.getConnection);
+            command.Parameters.Add("@id", SqlDbType.Int).Value = Id;
+            command.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+            command.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+            command.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate;
+            command.Parameters.Add("@gender", SqlDbType.NVarChar).Value = gender;
+            command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = phone;
+            command.Parameters.Add("@address", SqlDbType.NVarChar).Value = address;
+            command.Parameters.Add("@picture", SqlDbType.Image).Value = picture.ToArray();
+
+            mydb.openConnection();
+
+            if ((command.ExecuteNonQuery() == 1))
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        public bool deleteStudent(int id)
+        {
+            SqlCommand command = new SqlCommand("DELETE FROM student WHERE id = @id", mydb.getConnection);
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            mydb.openConnection();
+            if(command.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         public DataTable getStudents(SqlCommand command)
         {
             command.Connection = mydb.getConnection;

@@ -62,10 +62,10 @@ namespace Student_Management_System
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Find = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.radioButtonID = new System.Windows.Forms.RadioButton();
-            this.radioButtonPhone = new System.Windows.Forms.RadioButton();
-            this.radioButtonName = new System.Windows.Forms.RadioButton();
             this.radioButtonFistName = new System.Windows.Forms.RadioButton();
+            this.radioButtonName = new System.Windows.Forms.RadioButton();
+            this.radioButtonPhone = new System.Windows.Forms.RadioButton();
+            this.radioButtonID = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxStudentImage)).BeginInit();
@@ -85,6 +85,7 @@ namespace Student_Management_System
             this.ButtonEditStudent.TabIndex = 5;
             this.ButtonEditStudent.Text = "Edit 🛠️";
             this.ButtonEditStudent.UseVisualStyleBackColor = false;
+            this.ButtonEditStudent.Click += new System.EventHandler(this.ButtonEditStudent_Click);
             // 
             // pictureBox1
             // 
@@ -132,6 +133,7 @@ namespace Student_Management_System
             this.ButtonRemoveStudent.TabIndex = 12;
             this.ButtonRemoveStudent.Text = "Remove 🪣";
             this.ButtonRemoveStudent.UseVisualStyleBackColor = false;
+            this.ButtonRemoveStudent.Click += new System.EventHandler(this.ButtonRemoveStudent_Click);
             // 
             // label3
             // 
@@ -301,6 +303,7 @@ namespace Student_Management_System
             // RadioButtonMale
             // 
             this.RadioButtonMale.AutoSize = true;
+            this.RadioButtonMale.Checked = true;
             this.RadioButtonMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioButtonMale.Location = new System.Drawing.Point(4, 10);
             this.RadioButtonMale.Name = "RadioButtonMale";
@@ -422,27 +425,15 @@ namespace Student_Management_System
             this.panel10.Size = new System.Drawing.Size(90, 100);
             this.panel10.TabIndex = 43;
             // 
-            // radioButtonID
+            // radioButtonFistName
             // 
-            this.radioButtonID.AutoSize = true;
-            this.radioButtonID.Checked = true;
-            this.radioButtonID.Location = new System.Drawing.Point(0, 3);
-            this.radioButtonID.Name = "radioButtonID";
-            this.radioButtonID.Size = new System.Drawing.Size(42, 21);
-            this.radioButtonID.TabIndex = 0;
-            this.radioButtonID.TabStop = true;
-            this.radioButtonID.Text = "ID";
-            this.radioButtonID.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonPhone
-            // 
-            this.radioButtonPhone.AutoSize = true;
-            this.radioButtonPhone.Location = new System.Drawing.Point(0, 30);
-            this.radioButtonPhone.Name = "radioButtonPhone";
-            this.radioButtonPhone.Size = new System.Drawing.Size(70, 21);
-            this.radioButtonPhone.TabIndex = 1;
-            this.radioButtonPhone.Text = "Phone";
-            this.radioButtonPhone.UseVisualStyleBackColor = true;
+            this.radioButtonFistName.AutoSize = true;
+            this.radioButtonFistName.Location = new System.Drawing.Point(0, 57);
+            this.radioButtonFistName.Name = "radioButtonFistName";
+            this.radioButtonFistName.Size = new System.Drawing.Size(93, 21);
+            this.radioButtonFistName.TabIndex = 3;
+            this.radioButtonFistName.Text = "FirstName";
+            this.radioButtonFistName.UseVisualStyleBackColor = true;
             // 
             // radioButtonName
             // 
@@ -454,15 +445,27 @@ namespace Student_Management_System
             this.radioButtonName.Text = "Name";
             this.radioButtonName.UseVisualStyleBackColor = true;
             // 
-            // radioButtonFistName
+            // radioButtonPhone
             // 
-            this.radioButtonFistName.AutoSize = true;
-            this.radioButtonFistName.Location = new System.Drawing.Point(0, 57);
-            this.radioButtonFistName.Name = "radioButtonFistName";
-            this.radioButtonFistName.Size = new System.Drawing.Size(93, 21);
-            this.radioButtonFistName.TabIndex = 3;
-            this.radioButtonFistName.Text = "FirstName";
-            this.radioButtonFistName.UseVisualStyleBackColor = true;
+            this.radioButtonPhone.AutoSize = true;
+            this.radioButtonPhone.Location = new System.Drawing.Point(0, 30);
+            this.radioButtonPhone.Name = "radioButtonPhone";
+            this.radioButtonPhone.Size = new System.Drawing.Size(70, 21);
+            this.radioButtonPhone.TabIndex = 1;
+            this.radioButtonPhone.Text = "Phone";
+            this.radioButtonPhone.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonID
+            // 
+            this.radioButtonID.AutoSize = true;
+            this.radioButtonID.Checked = true;
+            this.radioButtonID.Location = new System.Drawing.Point(0, 3);
+            this.radioButtonID.Name = "radioButtonID";
+            this.radioButtonID.Size = new System.Drawing.Size(42, 21);
+            this.radioButtonID.TabIndex = 0;
+            this.radioButtonID.TabStop = true;
+            this.radioButtonID.Text = "ID";
+            this.radioButtonID.UseVisualStyleBackColor = true;
             // 
             // UpdateDeleteStudentForm
             // 

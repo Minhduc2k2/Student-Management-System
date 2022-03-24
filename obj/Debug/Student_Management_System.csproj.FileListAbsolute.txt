@@ -14,3 +14,4 @@ D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.StudentListForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.UpdateDeleteStudentForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.FirstNameForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.ProcessBarForm.resources

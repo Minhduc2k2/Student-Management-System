@@ -53,7 +53,12 @@ namespace LoginForm
         {
             // TODO: This line of code loads data into the 'myDBDataSet1.student' table. You can move, or remove it, as needed.
             this.studentTableAdapter.Fill(this.myDBDataSet1.student);
-            SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE fname LIKE N'%" + firstName + "%'");
+            SqlCommand command;
+            if (lastName.Equals(""))
+                command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE fname LIKE N'%" + firstName + "%'");
+            else
+                command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE fname LIKE N'%" + firstName + "%' and lname LIKE N'%" + lastName + "%'");
+
             DataGridView1.ReadOnly = true;
             //Processing img
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();

@@ -37,7 +37,7 @@ namespace LoginForm
             DataGridView1.ReadOnly = true;
             //Processing img
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            DataGridView1.RowTemplate.Height = 80;
+            DataGridView1.RowTemplate.Height = 115;
             DataGridView1.DataSource = student.getStudents(command);
             picCol = (DataGridViewImageColumn)DataGridView1.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;

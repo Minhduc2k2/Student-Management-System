@@ -25,7 +25,10 @@ namespace Student_Management_System
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-           Close();   
+            ProcessBarForm processBarForm = new ProcessBarForm();
+            processBarForm.ShowDialog();
+
+            Close();   
         }
 
         bool verif()
@@ -48,6 +51,9 @@ namespace Student_Management_System
 
         private void ButtonAddStudent_Click(object sender, EventArgs e)
         {
+            ProcessBarForm processBarForm = new ProcessBarForm();
+            processBarForm.ShowDialog();
+
             Student student = new Student();
             int id = Convert.ToInt32(TextBoxStudentId.Text);
             string fname = TextBoxFname.Text;
