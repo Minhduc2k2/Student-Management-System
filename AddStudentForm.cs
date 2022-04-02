@@ -20,11 +20,9 @@ namespace Student_Management_System
             InitializeComponent();
         }
 
-
-
-
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
+            //Show Process Bar
             ProcessBarForm processBarForm = new ProcessBarForm();
             processBarForm.ShowDialog();
 
@@ -51,8 +49,14 @@ namespace Student_Management_System
 
         private void ButtonAddStudent_Click(object sender, EventArgs e)
         {
+            //Show Process Bar
             ProcessBarForm processBarForm = new ProcessBarForm();
             processBarForm.ShowDialog();
+
+            //Regex
+            string phoneRegex = @"^(84|0[3|5|7|8|9])+([0-9]{8})\b$";
+
+
 
             Student student = new Student();
             int id = Convert.ToInt32(TextBoxStudentId.Text);

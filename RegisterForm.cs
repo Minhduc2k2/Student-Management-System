@@ -1,13 +1,7 @@
 ﻿using RegisterForm;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Management_System
@@ -21,35 +15,44 @@ namespace Student_Management_System
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
+            //Tạo đối tượng user
             User user = new User();
             string username = TextBoxUserName.Text;
             string password = TextBoxPassword.Text;
             string repassword = TextBoxRePassword.Text;
 
-            if(verif() == 1)
+            if (verif() == 1)
             {
-                if(user.insertUser(username, password))
+                //Gọi hàm insertUser
+                if (user.insertUser(username, password))
                 {
                     MessageBox.Show("New User Added", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Error", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if(verif() == 2)
+            else if (verif() == 2)
             {
-                MessageBox.Show("Password and Re-Password is not equal", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                //MessageBox.Show("Password and Re-Password is not equal", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textBoxNotiRePassword.Text = "Password and Re-Password is not equal";
             }
-            else if(verif() == 3)
+            else if (verif() == 3)
             {
-                MessageBox.Show("UserName already exists", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //MessageBox.Show("UserName already exists", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textBoxNotiUserName.Text = "UserName already exists";
             }
             else
             {
-                MessageBox.Show("Empty Fields", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //MessageBox.Show("Empty Fields", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (TextBoxUserName.Text.Trim() == "")
+                    textBoxNotiUserName.Text = "UserName must be filled";
+                if (TextBoxPassword.Text.Trim() == "")
+                    textBoxNotiPassword.Text = "Password must be filled";
+                if (TextBoxRePassword.Text.Trim() == "")
+                    textBoxNotiRePassword.Text = "Re-Password must be filled";
             }
         }
         //Check if UserName already exists
@@ -77,7 +80,7 @@ namespace Student_Management_System
         int verif()
         {
             //Check if Empty Fields
-            if (TextBoxUserName.Text.Trim() == "" || TextBoxPassword.Text.Trim() == "" ||TextBoxRePassword.Text.Trim() == "")
+            if (TextBoxUserName.Text.Trim() == "" || TextBoxPassword.Text.Trim() == "" || TextBoxRePassword.Text.Trim() == "")
                 return 0;
             //Check if Password and Re-Password is not equal
             if (!TextBoxPassword.Text.Equals(TextBoxRePassword.Text))
@@ -88,6 +91,29 @@ namespace Student_Management_System
             //Success
             else
                 return 1;
-        }    
+        }
+
+        private void TextBoxUserName_Leave(object sender, EventArgs e)
+        {
+            if (existUsername())
+                //MessageBox.Show("UserName already exists", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textBoxNotiUserName.Text = "UserName already exists";
+
+        }
+
+        private void TextBoxUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textBoxNotiUserName.Text = "";
+        }
+
+        private void TextBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textBoxNotiPassword.Text = "";
+        }
+
+        private void TextBoxRePassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textBoxNotiRePassword.Text = "";
+        }
     }
 }

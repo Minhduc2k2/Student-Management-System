@@ -32,10 +32,13 @@ namespace Student_Management_System
             command.Parameters.Add("@User ", SqlDbType.VarChar).Value = TextBoxUserName.Text;
             command.Parameters.Add("@Pass ", SqlDbType.VarChar).Value = TextBoxPassword.Text;
 
+            //SelectCommand thuộc tính chứa đối tượng SqlCommand, nó chạy khi lấy dữ liệu bằng cách gọi phương thực Fill
             adapter.SelectCommand = command;
 
+            //Đổ dữ liệu từ adapter vào table
             adapter.Fill(table);
 
+            //Nếu dữ liệu trong bảng lớn hơn 1 dòng => Thực hiện thành công
             if (table.Rows.Count > 0)
             {
                 //MessageBox.Show("Ok, next time will we go to Main Menu of App", "Announcement" , MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -43,12 +46,11 @@ namespace Student_Management_System
             }
             else
                 MessageBox.Show("Invalid UserName Or PassWord", "Login Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
         }
 
         private void TextBoxUserName_Enter(object sender, EventArgs e)
         {
+            //PlaceHolder
             if (TextBoxUserName.Text == "UserName")
             {
                 TextBoxUserName.Text = "";
@@ -57,6 +59,7 @@ namespace Student_Management_System
 
         private void TextBoxUserName_Leave(object sender, EventArgs e)
         {
+            //PlaceHolder
             if (TextBoxUserName.Text == "")
             {
                 TextBoxUserName.Text = "UserName";
@@ -65,6 +68,7 @@ namespace Student_Management_System
 
         private void TextBoxPassword_Enter(object sender, EventArgs e)
         {
+            //PlaceHolder
             if (TextBoxPassword.Text == "Password")
             {
                 TextBoxPassword.Text = "";
@@ -74,6 +78,7 @@ namespace Student_Management_System
 
         private void TextBoxPassword_Leave(object sender, EventArgs e)
         {
+            //PlaceHolder
             if (TextBoxPassword.Text == "")
             {
                 TextBoxPassword.Text = "Password";
@@ -81,9 +86,11 @@ namespace Student_Management_System
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonRegister_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Yes;
+            //this.DialogResult = DialogResult.Yes;
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
     }
 }

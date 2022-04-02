@@ -18,15 +18,14 @@ namespace Student_Management_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new LoginForm());
-            //Application.Run(new AddStudentForm());
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
-            if (loginForm.DialogResult ==  DialogResult.Yes)
-            {
-                Application.Run(new RegisterForm());
-            }
-            if(loginForm.DialogResult == DialogResult.OK)
+            //if (loginForm.DialogResult ==  DialogResult.Yes)
+            //{
+            //    Application.Run(new RegisterForm());
+            //    loginForm.ShowDialog();
+            //}
+            if (loginForm.DialogResult == DialogResult.OK)
             {
                 Application.Run(new MainForm());
             }

@@ -15,11 +15,6 @@ namespace Student_Management_System
             InitializeComponent();
         }
 
-
-
-
-
-
         bool verif()
         {
             if (TextBoxFname.Text.Trim() == "" || TextBoxLname.Text.Trim() == "" || TextBoxAddress.Text.Trim() == "" || TextBoxPhone.Text.Trim() == "" || PictureBoxStudentImage.Image == null)
@@ -38,17 +33,16 @@ namespace Student_Management_System
             }
         }
 
-
-
         private void Find_Click(object sender, EventArgs e)
         {
+            //Show Progress Bar
             ProcessBarForm processBarForm = new ProcessBarForm();
             processBarForm.ShowDialog();
 
             Student student = new Student();
             if (radioButtonID.Checked)
             {
-                int id = int.Parse(TextBoxStudentId.Text);
+                int id = int.Parse(TextBoxStudentId.Text.Trim());
                 SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE id = " + id);
 
                 DataTable table = student.getStudents(command);
@@ -73,17 +67,15 @@ namespace Student_Management_System
                     byte[] pic = (byte[])table.Rows[0]["picture"];
                     MemoryStream picture = new MemoryStream(pic);
                     PictureBoxStudentImage.Image = Image.FromStream(picture);
-
-
                 }
                 else
                 {
-                    MessageBox.Show("not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else if (radioButtonPhone.Checked)
             {
-                int phone = int.Parse(TextBoxPhone.Text);
+                int phone = int.Parse(TextBoxPhone.Text.Trim());
                 SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE phone = " + phone);
 
                 DataTable table = student.getStudents(command);
@@ -108,12 +100,10 @@ namespace Student_Management_System
                     byte[] pic = (byte[])table.Rows[0]["picture"];
                     MemoryStream picture = new MemoryStream(pic);
                     PictureBoxStudentImage.Image = Image.FromStream(picture);
-
-
                 }
                 else
                 {
-                    MessageBox.Show("not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else if (radioButtonFistName.Checked)
@@ -198,7 +188,7 @@ namespace Student_Management_System
                         TextBoxAddress.Text = "";
                         PictureBoxStudentImage.Image = null;
                         RadioButtonMale.Checked = true;
-
+                        Close();
                     }
                     else
                     {

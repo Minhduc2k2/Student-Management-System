@@ -41,6 +41,9 @@ namespace Student_Management_System
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TextBoxRePassword = new System.Windows.Forms.TextBox();
+            this.textBoxNotiUserName = new System.Windows.Forms.TextBox();
+            this.textBoxNotiPassword = new System.Windows.Forms.TextBox();
+            this.textBoxNotiRePassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +53,7 @@ namespace Student_Management_System
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonRegister.Location = new System.Drawing.Point(72, 427);
+            this.buttonRegister.Location = new System.Drawing.Point(72, 461);
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(373, 46);
@@ -82,7 +85,7 @@ namespace Student_Management_System
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(72, 309);
+            this.panel2.Location = new System.Drawing.Point(72, 319);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(373, 1);
@@ -94,12 +97,13 @@ namespace Student_Management_System
             this.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxPassword.ForeColor = System.Drawing.SystemColors.Window;
-            this.TextBoxPassword.Location = new System.Drawing.Point(209, 278);
+            this.TextBoxPassword.Location = new System.Drawing.Point(209, 288);
             this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxPassword.Name = "TextBoxPassword";
             this.TextBoxPassword.Size = new System.Drawing.Size(236, 23);
             this.TextBoxPassword.TabIndex = 10;
             this.TextBoxPassword.UseSystemPasswordChar = true;
+            this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPassword_KeyPress);
             // 
             // label1
             // 
@@ -115,7 +119,7 @@ namespace Student_Management_System
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 278);
+            this.label2.Location = new System.Drawing.Point(67, 288);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 14;
@@ -132,12 +136,14 @@ namespace Student_Management_System
             this.TextBoxUserName.Name = "TextBoxUserName";
             this.TextBoxUserName.Size = new System.Drawing.Size(236, 23);
             this.TextBoxUserName.TabIndex = 15;
+            this.TextBoxUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxUserName_KeyPress);
+            this.TextBoxUserName.Leave += new System.EventHandler(this.TextBoxUserName_Leave);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 352);
+            this.label3.Location = new System.Drawing.Point(67, 371);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 25);
             this.label3.TabIndex = 18;
@@ -146,7 +152,7 @@ namespace Student_Management_System
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(72, 383);
+            this.panel3.Location = new System.Drawing.Point(72, 402);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(373, 1);
@@ -158,12 +164,49 @@ namespace Student_Management_System
             this.TextBoxRePassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxRePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxRePassword.ForeColor = System.Drawing.SystemColors.Window;
-            this.TextBoxRePassword.Location = new System.Drawing.Point(209, 352);
+            this.TextBoxRePassword.Location = new System.Drawing.Point(209, 371);
             this.TextBoxRePassword.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxRePassword.Name = "TextBoxRePassword";
             this.TextBoxRePassword.Size = new System.Drawing.Size(236, 23);
             this.TextBoxRePassword.TabIndex = 19;
             this.TextBoxRePassword.UseSystemPasswordChar = true;
+            this.TextBoxRePassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxRePassword_KeyPress);
+            // 
+            // textBoxNotiUserName
+            // 
+            this.textBoxNotiUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxNotiUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNotiUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiUserName.Location = new System.Drawing.Point(94, 242);
+            this.textBoxNotiUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNotiUserName.Name = "textBoxNotiUserName";
+            this.textBoxNotiUserName.Size = new System.Drawing.Size(351, 20);
+            this.textBoxNotiUserName.TabIndex = 20;
+            // 
+            // textBoxNotiPassword
+            // 
+            this.textBoxNotiPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxNotiPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNotiPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiPassword.Location = new System.Drawing.Point(94, 328);
+            this.textBoxNotiPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNotiPassword.Name = "textBoxNotiPassword";
+            this.textBoxNotiPassword.Size = new System.Drawing.Size(351, 20);
+            this.textBoxNotiPassword.TabIndex = 21;
+            // 
+            // textBoxNotiRePassword
+            // 
+            this.textBoxNotiRePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxNotiRePassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNotiRePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiRePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiRePassword.Location = new System.Drawing.Point(94, 411);
+            this.textBoxNotiRePassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNotiRePassword.Name = "textBoxNotiRePassword";
+            this.textBoxNotiRePassword.Size = new System.Drawing.Size(351, 20);
+            this.textBoxNotiRePassword.TabIndex = 22;
             // 
             // RegisterForm
             // 
@@ -171,6 +214,9 @@ namespace Student_Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(505, 614);
+            this.Controls.Add(this.textBoxNotiRePassword);
+            this.Controls.Add(this.textBoxNotiPassword);
+            this.Controls.Add(this.textBoxNotiUserName);
             this.Controls.Add(this.TextBoxRePassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel3);
@@ -207,6 +253,9 @@ namespace Student_Management_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox TextBoxRePassword;
+        private System.Windows.Forms.TextBox textBoxNotiUserName;
+        private System.Windows.Forms.TextBox textBoxNotiPassword;
+        private System.Windows.Forms.TextBox textBoxNotiRePassword;
     }
 }
 

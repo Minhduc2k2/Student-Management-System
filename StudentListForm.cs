@@ -17,7 +17,8 @@ namespace LoginForm
         private void StudentListForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'myDBDataSet1.student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this.myDBDataSet1.student);
+            //this.studentTableAdapter.Fill(this.myDBDataSet1.student);
+
             SqlCommand command = new SqlCommand("Select * from student");
             DataGridView1.ReadOnly = true;
             //Processing img
@@ -32,7 +33,8 @@ namespace LoginForm
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'myDBDataSet1.student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this.myDBDataSet1.student);
+            //this.studentTableAdapter.Fill(this.myDBDataSet1.student);
+
             SqlCommand command = new SqlCommand("Select * from student");
             DataGridView1.ReadOnly = true;
             //Processing img
