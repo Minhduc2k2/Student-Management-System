@@ -41,9 +41,9 @@ namespace Student_Management_System
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TextBoxRePassword = new System.Windows.Forms.TextBox();
-            this.textBoxNotiUserName = new System.Windows.Forms.TextBox();
-            this.textBoxNotiPassword = new System.Windows.Forms.TextBox();
-            this.textBoxNotiRePassword = new System.Windows.Forms.TextBox();
+            this.textBoxNotiUserName = new System.Windows.Forms.Label();
+            this.textBoxNotiPassword = new System.Windows.Forms.Label();
+            this.textBoxNotiRePassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,38 +174,32 @@ namespace Student_Management_System
             // 
             // textBoxNotiUserName
             // 
-            this.textBoxNotiUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBoxNotiUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNotiUserName.AutoSize = true;
             this.textBoxNotiUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNotiUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.textBoxNotiUserName.Location = new System.Drawing.Point(94, 242);
-            this.textBoxNotiUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNotiUserName.Location = new System.Drawing.Point(84, 247);
             this.textBoxNotiUserName.Name = "textBoxNotiUserName";
-            this.textBoxNotiUserName.Size = new System.Drawing.Size(351, 20);
+            this.textBoxNotiUserName.Size = new System.Drawing.Size(0, 20);
             this.textBoxNotiUserName.TabIndex = 20;
             // 
             // textBoxNotiPassword
             // 
-            this.textBoxNotiPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBoxNotiPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNotiPassword.AutoSize = true;
             this.textBoxNotiPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNotiPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.textBoxNotiPassword.Location = new System.Drawing.Point(94, 328);
-            this.textBoxNotiPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNotiPassword.Location = new System.Drawing.Point(84, 335);
             this.textBoxNotiPassword.Name = "textBoxNotiPassword";
-            this.textBoxNotiPassword.Size = new System.Drawing.Size(351, 20);
+            this.textBoxNotiPassword.Size = new System.Drawing.Size(0, 20);
             this.textBoxNotiPassword.TabIndex = 21;
             // 
             // textBoxNotiRePassword
             // 
-            this.textBoxNotiRePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBoxNotiRePassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNotiRePassword.AutoSize = true;
             this.textBoxNotiRePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNotiRePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.textBoxNotiRePassword.Location = new System.Drawing.Point(94, 411);
-            this.textBoxNotiRePassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNotiRePassword.Location = new System.Drawing.Point(84, 416);
             this.textBoxNotiRePassword.Name = "textBoxNotiRePassword";
-            this.textBoxNotiRePassword.Size = new System.Drawing.Size(351, 20);
+            this.textBoxNotiRePassword.Size = new System.Drawing.Size(0, 20);
             this.textBoxNotiRePassword.TabIndex = 22;
             // 
             // RegisterForm
@@ -253,9 +247,9 @@ namespace Student_Management_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox TextBoxRePassword;
-        private System.Windows.Forms.TextBox textBoxNotiUserName;
-        private System.Windows.Forms.TextBox textBoxNotiPassword;
-        private System.Windows.Forms.TextBox textBoxNotiRePassword;
+        private System.Windows.Forms.Label textBoxNotiUserName;
+        private System.Windows.Forms.Label textBoxNotiPassword;
+        private System.Windows.Forms.Label textBoxNotiRePassword;
     }
 }
 

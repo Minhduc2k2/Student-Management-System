@@ -123,5 +123,28 @@ namespace LoginForm
             adapter.Fill(table);
             return table;
         }
+
+        private string executeTotal(string query)
+        {
+            SqlCommand command = new SqlCommand(query, mydb.getConnection);
+
+            mydb.openConnection();
+            string total = command.ExecuteScalar().ToString();
+            mydb.closeConnection();
+            return total;
+        }
+        public string getTotalStudent()
+        {
+            return executeTotal("Select COUNT(*) from student");
+        }
+        public string getTotalStudentMale()
+        {
+            return executeTotal("Select COUNT(*) from student WHERE gender = N'Male'");
+        }
+        public string getTotalStudentFeMale()
+        {
+            return executeTotal("Select COUNT(*) from student WHERE gender = N'FeMale'");
+        }
+
     }
 }

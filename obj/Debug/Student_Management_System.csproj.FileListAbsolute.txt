@@ -15,3 +15,12 @@ D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.StudentLi
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.UpdateDeleteStudentForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.FirstNameForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.ProcessBarForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.StaticsForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.ManageStudentForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.PrintSaveForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.csproj.ResolveComReference.cache
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Interop.ONAddInForWord.dll
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.AddCourseForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.RemoveCourseForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.EditCourseForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Interop.AdHocReportingExcelClientLib.dll

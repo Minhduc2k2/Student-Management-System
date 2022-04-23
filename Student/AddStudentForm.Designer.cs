@@ -1,7 +1,7 @@
 ﻿
 namespace Student_Management_System
 {
-    partial class UpdateDeleteStudentForm
+    partial class AddStudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,11 @@ namespace Student_Management_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateDeleteStudentForm));
-            this.ButtonEditStudent = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudentForm));
+            this.ButtonAddStudent = new System.Windows.Forms.Button();
             this.TextBoxStudentId = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ButtonRemoveStudent = new System.Windows.Forms.Button();
+            this.ButtonCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,46 +56,35 @@ namespace Student_Management_System
             this.TextBoxAddress = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.PictureBoxStudentImage = new System.Windows.Forms.PictureBox();
             this.ButtonUploadImage = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Find = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.radioButtonFistName = new System.Windows.Forms.RadioButton();
-            this.radioButtonName = new System.Windows.Forms.RadioButton();
-            this.radioButtonPhone = new System.Windows.Forms.RadioButton();
-            this.radioButtonID = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PictureBoxStudentImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxNotiFName = new System.Windows.Forms.Label();
+            this.textBoxNotiLName = new System.Windows.Forms.Label();
+            this.textBoxNotiBirthday = new System.Windows.Forms.Label();
+            this.textBoxNotiPhone = new System.Windows.Forms.Label();
+            this.textBoxNotiStudentID = new System.Windows.Forms.Label();
+            this.textBoxNotiAddress = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxStudentImage)).BeginInit();
-            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // ButtonEditStudent
+            // ButtonAddStudent
             // 
-            this.ButtonEditStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.ButtonEditStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonEditStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonEditStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ButtonEditStudent.Location = new System.Drawing.Point(271, 785);
-            this.ButtonEditStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonEditStudent.Name = "ButtonEditStudent";
-            this.ButtonEditStudent.Size = new System.Drawing.Size(175, 46);
-            this.ButtonEditStudent.TabIndex = 5;
-            this.ButtonEditStudent.Text = "Edit 🛠️";
-            this.ButtonEditStudent.UseVisualStyleBackColor = false;
-            this.ButtonEditStudent.Click += new System.EventHandler(this.ButtonEditStudent_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(210, 61);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.ButtonAddStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.ButtonAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAddStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.ButtonAddStudent.Location = new System.Drawing.Point(271, 785);
+            this.ButtonAddStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonAddStudent.Name = "ButtonAddStudent";
+            this.ButtonAddStudent.Size = new System.Drawing.Size(175, 46);
+            this.ButtonAddStudent.TabIndex = 5;
+            this.ButtonAddStudent.Text = "Add";
+            this.ButtonAddStudent.UseVisualStyleBackColor = false;
+            this.ButtonAddStudent.Click += new System.EventHandler(this.ButtonAddStudent_Click);
             // 
             // TextBoxStudentId
             // 
@@ -110,6 +98,7 @@ namespace Student_Management_System
             this.TextBoxStudentId.Size = new System.Drawing.Size(249, 23);
             this.TextBoxStudentId.TabIndex = 7;
             this.TextBoxStudentId.Tag = "";
+            this.TextBoxStudentId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxStudentId_KeyPress);
             // 
             // panel1
             // 
@@ -120,20 +109,20 @@ namespace Student_Management_System
             this.panel1.Size = new System.Drawing.Size(373, 1);
             this.panel1.TabIndex = 8;
             // 
-            // ButtonRemoveStudent
+            // ButtonCancel
             // 
-            this.ButtonRemoveStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ButtonRemoveStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonRemoveStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonRemoveStudent.ForeColor = System.Drawing.Color.White;
-            this.ButtonRemoveStudent.Location = new System.Drawing.Point(73, 785);
-            this.ButtonRemoveStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonRemoveStudent.Name = "ButtonRemoveStudent";
-            this.ButtonRemoveStudent.Size = new System.Drawing.Size(175, 46);
-            this.ButtonRemoveStudent.TabIndex = 12;
-            this.ButtonRemoveStudent.Text = "Remove 🪣";
-            this.ButtonRemoveStudent.UseVisualStyleBackColor = false;
-            this.ButtonRemoveStudent.Click += new System.EventHandler(this.ButtonRemoveStudent_Click);
+            this.ButtonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCancel.ForeColor = System.Drawing.Color.White;
+            this.ButtonCancel.Location = new System.Drawing.Point(73, 785);
+            this.ButtonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Size = new System.Drawing.Size(175, 46);
+            this.ButtonCancel.TabIndex = 12;
+            this.ButtonCancel.Text = "Cancel";
+            this.ButtonCancel.UseVisualStyleBackColor = false;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // label3
             // 
@@ -176,6 +165,7 @@ namespace Student_Management_System
             this.TextBoxFname.Size = new System.Drawing.Size(249, 23);
             this.TextBoxFname.TabIndex = 16;
             this.TextBoxFname.Tag = "";
+            this.TextBoxFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxFname_KeyPress);
             // 
             // label5
             // 
@@ -208,6 +198,7 @@ namespace Student_Management_System
             this.TextBoxLname.Size = new System.Drawing.Size(249, 23);
             this.TextBoxLname.TabIndex = 19;
             this.TextBoxLname.Tag = "";
+            this.TextBoxLname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxLname_KeyPress);
             // 
             // label6
             // 
@@ -240,6 +231,7 @@ namespace Student_Management_System
             this.TextBoxPhone.Size = new System.Drawing.Size(249, 23);
             this.TextBoxPhone.TabIndex = 28;
             this.TextBoxPhone.Tag = "";
+            this.TextBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPhone_KeyPress);
             // 
             // label7
             // 
@@ -296,7 +288,6 @@ namespace Student_Management_System
             this.RadioButtonFemale.Name = "RadioButtonFemale";
             this.RadioButtonFemale.Size = new System.Drawing.Size(98, 29);
             this.RadioButtonFemale.TabIndex = 1;
-            this.RadioButtonFemale.TabStop = true;
             this.RadioButtonFemale.Text = "Female";
             this.RadioButtonFemale.UseVisualStyleBackColor = true;
             // 
@@ -344,6 +335,7 @@ namespace Student_Management_System
             this.TextBoxAddress.Size = new System.Drawing.Size(249, 23);
             this.TextBoxAddress.TabIndex = 33;
             this.TextBoxAddress.Tag = "";
+            this.TextBoxAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAddress_KeyPress);
             // 
             // panel9
             // 
@@ -364,15 +356,6 @@ namespace Student_Management_System
             this.label10.Size = new System.Drawing.Size(75, 25);
             this.label10.TabIndex = 38;
             this.label10.Text = "Avatar:";
-            // 
-            // PictureBoxStudentImage
-            // 
-            this.PictureBoxStudentImage.Location = new System.Drawing.Point(193, 631);
-            this.PictureBoxStudentImage.Name = "PictureBoxStudentImage";
-            this.PictureBoxStudentImage.Size = new System.Drawing.Size(125, 125);
-            this.PictureBoxStudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxStudentImage.TabIndex = 39;
-            this.PictureBoxStudentImage.TabStop = false;
             // 
             // ButtonUploadImage
             // 
@@ -398,83 +381,100 @@ namespace Student_Management_System
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(253, 30);
             this.dateTimePicker1.TabIndex = 41;
+            this.dateTimePicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePicker1_KeyPress);
             // 
-            // Find
+            // PictureBoxStudentImage
             // 
-            this.Find.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
-            this.Find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Find.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Find.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.Find.Location = new System.Drawing.Point(356, 719);
-            this.Find.Margin = new System.Windows.Forms.Padding(4);
-            this.Find.Name = "Find";
-            this.Find.Size = new System.Drawing.Size(90, 37);
-            this.Find.TabIndex = 42;
-            this.Find.Text = "Find 🔍";
-            this.Find.UseVisualStyleBackColor = false;
-            this.Find.Click += new System.EventHandler(this.Find_Click);
+            this.PictureBoxStudentImage.Location = new System.Drawing.Point(249, 630);
+            this.PictureBoxStudentImage.Name = "PictureBoxStudentImage";
+            this.PictureBoxStudentImage.Size = new System.Drawing.Size(125, 125);
+            this.PictureBoxStudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxStudentImage.TabIndex = 39;
+            this.PictureBoxStudentImage.TabStop = false;
             // 
-            // panel10
+            // pictureBox1
             // 
-            this.panel10.Controls.Add(this.radioButtonFistName);
-            this.panel10.Controls.Add(this.radioButtonName);
-            this.panel10.Controls.Add(this.radioButtonPhone);
-            this.panel10.Controls.Add(this.radioButtonID);
-            this.panel10.Location = new System.Drawing.Point(356, 619);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(90, 100);
-            this.panel10.TabIndex = 43;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(210, 61);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // radioButtonFistName
+            // textBoxNotiFName
             // 
-            this.radioButtonFistName.AutoSize = true;
-            this.radioButtonFistName.Location = new System.Drawing.Point(0, 57);
-            this.radioButtonFistName.Name = "radioButtonFistName";
-            this.radioButtonFistName.Size = new System.Drawing.Size(93, 21);
-            this.radioButtonFistName.TabIndex = 3;
-            this.radioButtonFistName.Text = "FirstName";
-            this.radioButtonFistName.UseVisualStyleBackColor = true;
+            this.textBoxNotiFName.AutoSize = true;
+            this.textBoxNotiFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiFName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiFName.Location = new System.Drawing.Point(84, 291);
+            this.textBoxNotiFName.Name = "textBoxNotiFName";
+            this.textBoxNotiFName.Size = new System.Drawing.Size(0, 20);
+            this.textBoxNotiFName.TabIndex = 46;
             // 
-            // radioButtonName
+            // textBoxNotiLName
             // 
-            this.radioButtonName.AutoSize = true;
-            this.radioButtonName.Location = new System.Drawing.Point(0, 78);
-            this.radioButtonName.Name = "radioButtonName";
-            this.radioButtonName.Size = new System.Drawing.Size(66, 21);
-            this.radioButtonName.TabIndex = 2;
-            this.radioButtonName.Text = "Name";
-            this.radioButtonName.UseVisualStyleBackColor = true;
+            this.textBoxNotiLName.AutoSize = true;
+            this.textBoxNotiLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiLName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiLName.Location = new System.Drawing.Point(84, 354);
+            this.textBoxNotiLName.Name = "textBoxNotiLName";
+            this.textBoxNotiLName.Size = new System.Drawing.Size(0, 20);
+            this.textBoxNotiLName.TabIndex = 47;
             // 
-            // radioButtonPhone
+            // textBoxNotiBirthday
             // 
-            this.radioButtonPhone.AutoSize = true;
-            this.radioButtonPhone.Location = new System.Drawing.Point(0, 30);
-            this.radioButtonPhone.Name = "radioButtonPhone";
-            this.radioButtonPhone.Size = new System.Drawing.Size(70, 21);
-            this.radioButtonPhone.TabIndex = 1;
-            this.radioButtonPhone.Text = "Phone";
-            this.radioButtonPhone.UseVisualStyleBackColor = true;
+            this.textBoxNotiBirthday.AutoSize = true;
+            this.textBoxNotiBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiBirthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiBirthday.Location = new System.Drawing.Point(84, 410);
+            this.textBoxNotiBirthday.Name = "textBoxNotiBirthday";
+            this.textBoxNotiBirthday.Size = new System.Drawing.Size(0, 20);
+            this.textBoxNotiBirthday.TabIndex = 48;
             // 
-            // radioButtonID
+            // textBoxNotiPhone
             // 
-            this.radioButtonID.AutoSize = true;
-            this.radioButtonID.Checked = true;
-            this.radioButtonID.Location = new System.Drawing.Point(0, 3);
-            this.radioButtonID.Name = "radioButtonID";
-            this.radioButtonID.Size = new System.Drawing.Size(42, 21);
-            this.radioButtonID.TabIndex = 0;
-            this.radioButtonID.TabStop = true;
-            this.radioButtonID.Text = "ID";
-            this.radioButtonID.UseVisualStyleBackColor = true;
+            this.textBoxNotiPhone.AutoSize = true;
+            this.textBoxNotiPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiPhone.Location = new System.Drawing.Point(84, 562);
+            this.textBoxNotiPhone.Name = "textBoxNotiPhone";
+            this.textBoxNotiPhone.Size = new System.Drawing.Size(0, 20);
+            this.textBoxNotiPhone.TabIndex = 49;
             // 
-            // UpdateDeleteStudentForm
+            // textBoxNotiStudentID
+            // 
+            this.textBoxNotiStudentID.AutoSize = true;
+            this.textBoxNotiStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiStudentID.Location = new System.Drawing.Point(84, 215);
+            this.textBoxNotiStudentID.Name = "textBoxNotiStudentID";
+            this.textBoxNotiStudentID.Size = new System.Drawing.Size(0, 20);
+            this.textBoxNotiStudentID.TabIndex = 50;
+            // 
+            // textBoxNotiAddress
+            // 
+            this.textBoxNotiAddress.AutoSize = true;
+            this.textBoxNotiAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotiAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(164)))), ((int)(((byte)(255)))));
+            this.textBoxNotiAddress.Location = new System.Drawing.Point(84, 630);
+            this.textBoxNotiAddress.Name = "textBoxNotiAddress";
+            this.textBoxNotiAddress.Size = new System.Drawing.Size(0, 20);
+            this.textBoxNotiAddress.TabIndex = 51;
+            // 
+            // AddStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(509, 864);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.Find);
+            this.Controls.Add(this.textBoxNotiAddress);
+            this.Controls.Add(this.textBoxNotiStudentID);
+            this.Controls.Add(this.textBoxNotiPhone);
+            this.Controls.Add(this.textBoxNotiBirthday);
+            this.Controls.Add(this.textBoxNotiLName);
+            this.Controls.Add(this.textBoxNotiFName);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.ButtonUploadImage);
             this.Controls.Add(this.PictureBoxStudentImage);
@@ -498,23 +498,21 @@ namespace Student_Management_System
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TextBoxFname);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ButtonRemoveStudent);
+            this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TextBoxStudentId);
-            this.Controls.Add(this.ButtonEditStudent);
+            this.Controls.Add(this.ButtonAddStudent);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "UpdateDeleteStudentForm";
+            this.Name = "AddStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateDeleteStudentForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "AddStudentForm";
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxStudentImage)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,41 +521,41 @@ namespace Student_Management_System
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button ButtonEditStudent;
+        private System.Windows.Forms.Button ButtonAddStudent;
+        private System.Windows.Forms.TextBox TextBoxStudentId;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button ButtonRemoveStudent;
+        private System.Windows.Forms.Button ButtonCancel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox TextBoxFname;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox TextBoxLname;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox TextBoxPhone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.RadioButton RadioButtonFemale;
+        private System.Windows.Forms.RadioButton RadioButtonMale;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox TextBoxAddress;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox PictureBoxStudentImage;
         private System.Windows.Forms.Button ButtonUploadImage;
-        public System.Windows.Forms.TextBox TextBoxStudentId;
-        public System.Windows.Forms.TextBox TextBoxFname;
-        public System.Windows.Forms.TextBox TextBoxLname;
-        public System.Windows.Forms.TextBox TextBoxPhone;
-        public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.TextBox TextBoxAddress;
-        public System.Windows.Forms.DateTimePicker dateTimePicker1;
-        public System.Windows.Forms.PictureBox PictureBoxStudentImage;
-        public System.Windows.Forms.RadioButton RadioButtonFemale;
-        public System.Windows.Forms.RadioButton RadioButtonMale;
-        private System.Windows.Forms.Button Find;
-        private System.Windows.Forms.Panel panel10;
-        public System.Windows.Forms.RadioButton radioButtonName;
-        public System.Windows.Forms.RadioButton radioButtonPhone;
-        public System.Windows.Forms.RadioButton radioButtonID;
-        public System.Windows.Forms.RadioButton radioButtonFistName;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label textBoxNotiFName;
+        private System.Windows.Forms.Label textBoxNotiLName;
+        private System.Windows.Forms.Label textBoxNotiBirthday;
+        private System.Windows.Forms.Label textBoxNotiPhone;
+        private System.Windows.Forms.Label textBoxNotiStudentID;
+        private System.Windows.Forms.Label textBoxNotiAddress;
     }
 }
 

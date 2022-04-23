@@ -39,6 +39,11 @@ namespace LoginForm
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +105,7 @@ namespace LoginForm
             this.staticsToolStripMenuItem.Name = "staticsToolStripMenuItem";
             this.staticsToolStripMenuItem.Size = new System.Drawing.Size(322, 32);
             this.staticsToolStripMenuItem.Text = "Statics";
+            this.staticsToolStripMenuItem.Click += new System.EventHandler(this.staticsToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -109,6 +115,7 @@ namespace LoginForm
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(322, 32);
             this.editToolStripMenuItem.Text = "Edit / Remove";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // manageStudentFormToolStripMenuItem
             // 
@@ -118,6 +125,7 @@ namespace LoginForm
             this.manageStudentFormToolStripMenuItem.Name = "manageStudentFormToolStripMenuItem";
             this.manageStudentFormToolStripMenuItem.Size = new System.Drawing.Size(322, 32);
             this.manageStudentFormToolStripMenuItem.Text = "Manage Student Form";
+            this.manageStudentFormToolStripMenuItem.Click += new System.EventHandler(this.manageStudentFormToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
@@ -127,9 +135,16 @@ namespace LoginForm
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(322, 32);
             this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // cOURSEToolStripMenuItem
             // 
+            this.cOURSEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addCourseToolStripMenuItem,
+            this.removeCourseToolStripMenuItem,
+            this.editCourseToolStripMenuItem,
+            this.manageCourseToolStripMenuItem,
+            this.printToolStripMenuItem1});
             this.cOURSEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cOURSEToolStripMenuItem.Name = "cOURSEToolStripMenuItem";
             this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(99, 32);
@@ -141,6 +156,49 @@ namespace LoginForm
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(85, 32);
             this.sCOREToolStripMenuItem.Text = "SCORE";
+            // 
+            // addCourseToolStripMenuItem
+            // 
+            this.addCourseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.addCourseToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.addCourseToolStripMenuItem.Name = "addCourseToolStripMenuItem";
+            this.addCourseToolStripMenuItem.Size = new System.Drawing.Size(234, 32);
+            this.addCourseToolStripMenuItem.Text = "Add Course";
+            this.addCourseToolStripMenuItem.Click += new System.EventHandler(this.addCourseToolStripMenuItem_Click);
+            // 
+            // removeCourseToolStripMenuItem
+            // 
+            this.removeCourseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.removeCourseToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.removeCourseToolStripMenuItem.Name = "removeCourseToolStripMenuItem";
+            this.removeCourseToolStripMenuItem.Size = new System.Drawing.Size(234, 32);
+            this.removeCourseToolStripMenuItem.Text = "Remove Course";
+            this.removeCourseToolStripMenuItem.Click += new System.EventHandler(this.removeCourseToolStripMenuItem_Click);
+            // 
+            // editCourseToolStripMenuItem
+            // 
+            this.editCourseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.editCourseToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.editCourseToolStripMenuItem.Name = "editCourseToolStripMenuItem";
+            this.editCourseToolStripMenuItem.Size = new System.Drawing.Size(234, 32);
+            this.editCourseToolStripMenuItem.Text = "Edit Course";
+            this.editCourseToolStripMenuItem.Click += new System.EventHandler(this.editCourseToolStripMenuItem_Click);
+            // 
+            // manageCourseToolStripMenuItem
+            // 
+            this.manageCourseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.manageCourseToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.manageCourseToolStripMenuItem.Name = "manageCourseToolStripMenuItem";
+            this.manageCourseToolStripMenuItem.Size = new System.Drawing.Size(234, 32);
+            this.manageCourseToolStripMenuItem.Text = "Manage Course";
+            // 
+            // printToolStripMenuItem1
+            // 
+            this.printToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.printToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Window;
+            this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(234, 32);
+            this.printToolStripMenuItem1.Text = "Print";
             // 
             // MainForm
             // 
@@ -175,5 +233,10 @@ namespace LoginForm
         private System.Windows.Forms.ToolStripMenuItem sCOREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageStudentFormToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCourseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeCourseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editCourseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageCourseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem1;
     }
 }

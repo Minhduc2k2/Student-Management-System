@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,10 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FirstNameForm.cs">
+    <Compile Include="Course\EditCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FirstNameForm.Designer.cs">
+    <Compile Include="Course\EditCourseForm.Designer.cs">
+      <DependentUpon>EditCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\RemoveCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\RemoveCourseForm.Designer.cs">
+      <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\AddCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\AddCourseForm.Designer.cs">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course\Course.cs" />
+    <Compile Include="Student\FirstNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\FirstNameForm.Designer.cs">
       <DependentUpon>FirstNameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessBarForm.cs">
@@ -58,16 +78,34 @@
     <Compile Include="ProcessBarForm.Designer.cs">
       <DependentUpon>ProcessBarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateDeleteStudentForm.cs">
+    <Compile Include="Student\StaticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateDeleteStudentForm.Designer.cs">
+    <Compile Include="Student\StaticsForm.Designer.cs">
+      <DependentUpon>StaticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ManageStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\ManageStudentForm.Designer.cs">
+      <DependentUpon>ManageStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\PrintSaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\PrintSaveForm.Designer.cs">
+      <DependentUpon>PrintSaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\UpdateDeleteStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\UpdateDeleteStudentForm.Designer.cs">
       <DependentUpon>UpdateDeleteStudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddStudentForm.cs">
+    <Compile Include="Student\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddStudentForm.Designer.cs">
+    <Compile Include="Student\AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="myDBDataSet.Designer.cs">
@@ -80,10 +118,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>myDBDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="StudentListForm.cs">
+    <Compile Include="Student\StudentListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentListForm.Designer.cs">
+    <Compile Include="Student\StudentListForm.Designer.cs">
       <DependentUpon>StudentListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterForm.cs">
@@ -107,21 +145,39 @@
     <Compile Include="MY_DB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="Student\Student.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="FirstNameForm.resx">
+    <EmbeddedResource Include="Course\EditCourseForm.resx">
+      <DependentUpon>EditCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\RemoveCourseForm.resx">
+      <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\AddCourseForm.resx">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\FirstNameForm.resx">
       <DependentUpon>FirstNameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcessBarForm.resx">
       <DependentUpon>ProcessBarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateDeleteStudentForm.resx">
+    <EmbeddedResource Include="Student\StaticsForm.resx">
+      <DependentUpon>StaticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\ManageStudentForm.resx">
+      <DependentUpon>ManageStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\PrintSaveForm.resx">
+      <DependentUpon>PrintSaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\UpdateDeleteStudentForm.resx">
       <DependentUpon>UpdateDeleteStudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddStudentForm.resx">
+    <EmbeddedResource Include="Student\AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentListForm.resx">
+    <EmbeddedResource Include="Student\StudentListForm.resx">
       <DependentUpon>StudentListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
@@ -184,5 +240,62 @@
   <ItemGroup>
     <None Include="img\icons8-login-64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AdHocReportingExcelClientLib">
+      <Guid>{8E47F3A2-81A4-468E-A401-E1DEBBAE2D8D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ONAddInForWord">
+      <Guid>{238AA1AC-786F-4C17-BAAB-253670B449B9}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
