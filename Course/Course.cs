@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginForm.Course
+namespace LoginForm
 {
     class Course
     {
@@ -72,6 +72,12 @@ namespace LoginForm.Course
                 mydb.closeConnection();
                 return false;
             }
+        }
+        public string totalCourse()
+        {
+            SqlCommand command = new SqlCommand("select COUNT(*) from course", mydb.getConnection);
+            mydb.openConnection();
+            return command.ExecuteScalar().ToString();
         }
         public bool deleteCourse(string id)
         {

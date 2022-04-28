@@ -72,5 +72,29 @@ namespace LoginForm
             EditCourseForm editCourseForm = new EditCourseForm();
             editCourseForm.Show(this);
         }
+
+        private void manageCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageCourseForm manageCourseForm = new ManageCourseForm();
+            manageCourseForm.Show(this);
+        }
+
+        private void printToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PrintSaveCourseForm printSaveCourseForm = new PrintSaveCourseForm();
+            printSaveCourseForm.Show(this);
+        }
+
+        private void toolStripMenuItemAddScore_Click(object sender, EventArgs e)
+        {
+            ScoreForm addScoreForm = new ScoreForm();
+            addScoreForm.Show(this);
+        }
+
+        private void toolStripMenuItemRemoveScore_Click(object sender, EventArgs e)
+        {
+            RemoveScoreForm removeScoreForm = new RemoveScoreForm();
+            removeScoreForm.Show(this);
+        }
     }
 }

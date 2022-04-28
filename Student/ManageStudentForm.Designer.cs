@@ -37,6 +37,14 @@ namespace LoginForm
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentTableAdapter = new LoginForm.myDBDataSet1TableAdapters.studentTableAdapter();
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxNotiAddress = new System.Windows.Forms.Label();
             this.textBoxNotiStudentID = new System.Windows.Forms.Label();
@@ -81,14 +89,6 @@ namespace LoginForm
             this.label1 = new System.Windows.Forms.Label();
             this.labelTotalStudent = new System.Windows.Forms.Label();
             this.ButtonDownloadImage = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet1)).BeginInit();
@@ -146,6 +146,78 @@ namespace LoginForm
             this.DataGridView1.Size = new System.Drawing.Size(945, 413);
             this.DataGridView1.TabIndex = 0;
             this.DataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentDoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 95.32216F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Student ID";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fnameDataGridViewTextBoxColumn
+            // 
+            this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
+            this.fnameDataGridViewTextBoxColumn.FillWeight = 95.76022F;
+            this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.fnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
+            this.fnameDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // lnameDataGridViewTextBoxColumn
+            // 
+            this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
+            this.lnameDataGridViewTextBoxColumn.FillWeight = 96.14607F;
+            this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
+            this.lnameDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // bdateDataGridViewTextBoxColumn
+            // 
+            this.bdateDataGridViewTextBoxColumn.DataPropertyName = "bdate";
+            this.bdateDataGridViewTextBoxColumn.FillWeight = 96.48597F;
+            this.bdateDataGridViewTextBoxColumn.HeaderText = "Birthday";
+            this.bdateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bdateDataGridViewTextBoxColumn.Name = "bdateDataGridViewTextBoxColumn";
+            this.bdateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
+            this.genderDataGridViewTextBoxColumn.FillWeight = 96.78535F;
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.FillWeight = 125.8044F;
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone Number";
+            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.FillWeight = 107.7595F;
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Width = 122;
+            // 
+            // pictureDataGridViewImageColumn
+            // 
+            this.pictureDataGridViewImageColumn.DataPropertyName = "picture";
+            this.pictureDataGridViewImageColumn.FillWeight = 85.93631F;
+            this.pictureDataGridViewImageColumn.HeaderText = "Avatar";
+            this.pictureDataGridViewImageColumn.MinimumWidth = 6;
+            this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
+            this.pictureDataGridViewImageColumn.Width = 122;
             // 
             // pictureBox1
             // 
@@ -648,76 +720,6 @@ namespace LoginForm
             this.ButtonDownloadImage.Text = "Download ⬇️";
             this.ButtonDownloadImage.UseVisualStyleBackColor = false;
             this.ButtonDownloadImage.Click += new System.EventHandler(this.ButtonDownloadImage_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 95.32216F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Student ID";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // fnameDataGridViewTextBoxColumn
-            // 
-            this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
-            this.fnameDataGridViewTextBoxColumn.FillWeight = 95.76022F;
-            this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.fnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
-            this.fnameDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // lnameDataGridViewTextBoxColumn
-            // 
-            this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
-            this.lnameDataGridViewTextBoxColumn.FillWeight = 96.14607F;
-            this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
-            this.lnameDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // bdateDataGridViewTextBoxColumn
-            // 
-            this.bdateDataGridViewTextBoxColumn.DataPropertyName = "bdate";
-            this.bdateDataGridViewTextBoxColumn.FillWeight = 96.48597F;
-            this.bdateDataGridViewTextBoxColumn.HeaderText = "Birthday";
-            this.bdateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.bdateDataGridViewTextBoxColumn.Name = "bdateDataGridViewTextBoxColumn";
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
-            this.genderDataGridViewTextBoxColumn.FillWeight = 96.78535F;
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.FillWeight = 125.8044F;
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone Number";
-            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.FillWeight = 107.7595F;
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Width = 122;
-            // 
-            // pictureDataGridViewImageColumn
-            // 
-            this.pictureDataGridViewImageColumn.DataPropertyName = "picture";
-            this.pictureDataGridViewImageColumn.FillWeight = 85.93631F;
-            this.pictureDataGridViewImageColumn.HeaderText = "Avatar";
-            this.pictureDataGridViewImageColumn.MinimumWidth = 6;
-            this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
-            this.pictureDataGridViewImageColumn.Width = 122;
             // 
             // ManageStudentForm
             // 

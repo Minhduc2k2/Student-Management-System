@@ -24,3 +24,7 @@ D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.RemoveCourseForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.EditCourseForm.resources
 D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Interop.AdHocReportingExcelClientLib.dll
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\Student_Management_System.ManageCourseForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.PrintSaveCourseForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.ScoreForm.resources
+D:\DUc\Winform\Student_Management_System\LoginForm\obj\Debug\LoginForm.RemoveScoreForm.resources

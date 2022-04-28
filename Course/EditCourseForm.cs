@@ -1,7 +1,7 @@
-﻿using LoginForm.Course;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using LoginForm;
 
 namespace Student_Management_System
 {

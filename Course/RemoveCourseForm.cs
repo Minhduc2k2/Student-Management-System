@@ -1,5 +1,4 @@
 ﻿using LoginForm;
-using LoginForm.Course;
 using System;
 using System.Drawing;
 using System.IO;
