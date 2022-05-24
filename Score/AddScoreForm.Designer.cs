@@ -89,6 +89,7 @@ namespace LoginForm
             // DataGridView1
             // 
             this.DataGridView1.AutoGenerateColumns = false;
+            this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -111,7 +112,6 @@ namespace LoginForm
             this.idDataGridViewTextBoxColumn.HeaderText = "Student ID";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 135;
             // 
             // fnameDataGridViewTextBoxColumn
             // 
@@ -120,7 +120,6 @@ namespace LoginForm
             this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.fnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
-            this.fnameDataGridViewTextBoxColumn.Width = 136;
             // 
             // lnameDataGridViewTextBoxColumn
             // 
@@ -129,15 +128,16 @@ namespace LoginForm
             this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.lnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
-            this.lnameDataGridViewTextBoxColumn.Width = 136;
             // 
             // comboBoxCourse
             // 
+            this.comboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCourse.FormattingEnabled = true;
             this.comboBoxCourse.Location = new System.Drawing.Point(229, 211);
             this.comboBoxCourse.Name = "comboBoxCourse";
-            this.comboBoxCourse.Size = new System.Drawing.Size(236, 33);
+            this.comboBoxCourse.Size = new System.Drawing.Size(236, 28);
             this.comboBoxCourse.TabIndex = 60;
+            this.comboBoxCourse.SelectedIndexChanged += new System.EventHandler(this.comboBoxCourse_SelectedIndexChanged);
             // 
             // TextBoxDescription
             // 
@@ -155,7 +155,7 @@ namespace LoginForm
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
             this.label6.Location = new System.Drawing.Point(87, 361);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 25);
+            this.label6.Size = new System.Drawing.Size(97, 20);
             this.label6.TabIndex = 58;
             this.label6.Text = "Description: ";
             // 
@@ -175,7 +175,7 @@ namespace LoginForm
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
             this.label5.Location = new System.Drawing.Point(87, 291);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 25);
+            this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 56;
             this.label5.Text = "Score:";
             // 
@@ -197,7 +197,7 @@ namespace LoginForm
             this.TextBoxScore.Location = new System.Drawing.Point(229, 291);
             this.TextBoxScore.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxScore.Name = "TextBoxScore";
-            this.TextBoxScore.Size = new System.Drawing.Size(236, 23);
+            this.TextBoxScore.Size = new System.Drawing.Size(236, 19);
             this.TextBoxScore.TabIndex = 54;
             this.TextBoxScore.Tag = "";
             // 
@@ -208,7 +208,7 @@ namespace LoginForm
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
             this.label4.Location = new System.Drawing.Point(87, 219);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 25);
+            this.label4.Size = new System.Drawing.Size(113, 20);
             this.label4.TabIndex = 53;
             this.label4.Text = "Select Course:";
             // 
@@ -228,7 +228,7 @@ namespace LoginForm
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(87, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 25);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 51;
             this.label3.Text = "Student ID:";
             // 
@@ -251,7 +251,7 @@ namespace LoginForm
             this.TextBoxStudentId.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxStudentId.Name = "TextBoxStudentId";
             this.TextBoxStudentId.ReadOnly = true;
-            this.TextBoxStudentId.Size = new System.Drawing.Size(236, 23);
+            this.TextBoxStudentId.Size = new System.Drawing.Size(236, 19);
             this.TextBoxStudentId.TabIndex = 49;
             this.TextBoxStudentId.Tag = "";
             // 
@@ -283,7 +283,7 @@ namespace LoginForm
             // 
             // ScoreForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1076, 577);

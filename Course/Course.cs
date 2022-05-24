@@ -110,6 +110,36 @@ namespace LoginForm
             adapter.Fill(table);
             return table;
         }
+
+        public DataTable getCourseLikeId(string id)
+        {
+            //Kết nối tới SQL Server
+            SqlCommand command = new SqlCommand("Select * FROM course WHERE id LIKE CONCAT('%', @id, '%')", mydb.getConnection);
+            command.Parameters.Add("@id", SqlDbType.Char).Value = id;
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+            return table;
+        }
+
+        public DataTable getCourseExcludeId(string id)
+        {
+            //Kết nối tới SQL Server
+            SqlCommand command = new SqlCommand("Select * FROM course WHERE id <> @id", mydb.getConnection);
+            command.Parameters.Add("@id", SqlDbType.Char).Value = id;
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+            return table;
+        }
         public DataTable getAllCourses()
         {
             //Kết nối tới SQL Server

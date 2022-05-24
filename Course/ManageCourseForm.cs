@@ -112,7 +112,7 @@ namespace Student_Management_System
 
         private void ButtonRemoveCourse_Click(object sender, EventArgs e)
         {
-            if (checkValid())
+            if (!course.checkCourseId(TextBoxCourseId.Text.Trim()))
             {
                 if (course.deleteCourse(TextBoxCourseId.Text.Trim()))
                 {

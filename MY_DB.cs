@@ -11,7 +11,7 @@ namespace Student_Management_System
     class MY_DB
     {
         //lấy kết nối tới database myDB
-        SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=myDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=myDB;Integrated Security=True");
 
         //get the connection
         public SqlConnection getConnection

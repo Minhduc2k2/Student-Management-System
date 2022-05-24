@@ -1,4 +1,5 @@
-﻿using Student_Management_System;
+﻿using LoginForm.Result;
+using Student_Management_System;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,6 +96,43 @@ namespace LoginForm
         {
             RemoveScoreForm removeScoreForm = new RemoveScoreForm();
             removeScoreForm.Show(this);
+        }
+
+        private void toolStripMenuItemManageScore_Click(object sender, EventArgs e)
+        {
+            ManageScoreForm manageScoreForm = new ManageScoreForm();
+            manageScoreForm.Show(this);
+        }
+
+        private void toolStripMenuItemAVG_Click(object sender, EventArgs e)
+        {
+            AvgScoreForm avgScoreForm = new AvgScoreForm();
+            avgScoreForm.ShowDialog(this);
+        }
+
+        private void toolStripMenuItemPrint_Click(object sender, EventArgs e)
+        {
+            PrintSaveScoreForm printSaveScoreForm = new PrintSaveScoreForm();
+            printSaveScoreForm.Show(this);
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ResultForm resultForm = new ResultForm();
+            resultForm.Show(this);
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            StaticResultForm staticResultForm = new StaticResultForm();
+            staticResultForm.Show(this);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ResultForm resultForm = new ResultForm();
+            resultForm.Show();
+            resultForm.Close();
         }
     }
 }

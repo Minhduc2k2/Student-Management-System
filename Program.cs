@@ -1,4 +1,5 @@
 ﻿using LoginForm;
+using LoginForm.Human_Resource;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,10 @@ namespace Student_Management_System
             if (loginForm.DialogResult == DialogResult.OK)
             {
                 Application.Run(new MainForm());
+            }
+            else if(loginForm.DialogResult == DialogResult.Yes)
+            {
+                Application.Run(new ContactForm());
             }
             else
             {

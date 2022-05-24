@@ -58,14 +58,14 @@ namespace Student_Management_System
             this.label10 = new System.Windows.Forms.Label();
             this.ButtonUploadImage = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.PictureBoxStudentImage = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxNotiFName = new System.Windows.Forms.Label();
             this.textBoxNotiLName = new System.Windows.Forms.Label();
             this.textBoxNotiBirthday = new System.Windows.Forms.Label();
             this.textBoxNotiPhone = new System.Windows.Forms.Label();
             this.textBoxNotiStudentID = new System.Windows.Forms.Label();
             this.textBoxNotiAddress = new System.Windows.Forms.Label();
+            this.PictureBoxStudentImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxStudentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -383,26 +383,6 @@ namespace Student_Management_System
             this.dateTimePicker1.TabIndex = 41;
             this.dateTimePicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePicker1_KeyPress);
             // 
-            // PictureBoxStudentImage
-            // 
-            this.PictureBoxStudentImage.Location = new System.Drawing.Point(249, 630);
-            this.PictureBoxStudentImage.Name = "PictureBoxStudentImage";
-            this.PictureBoxStudentImage.Size = new System.Drawing.Size(125, 125);
-            this.PictureBoxStudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxStudentImage.TabIndex = 39;
-            this.PictureBoxStudentImage.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(210, 61);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // textBoxNotiFName
             // 
             this.textBoxNotiFName.AutoSize = true;
@@ -462,6 +442,26 @@ namespace Student_Management_System
             this.textBoxNotiAddress.Name = "textBoxNotiAddress";
             this.textBoxNotiAddress.Size = new System.Drawing.Size(0, 20);
             this.textBoxNotiAddress.TabIndex = 51;
+            // 
+            // PictureBoxStudentImage
+            // 
+            this.PictureBoxStudentImage.Location = new System.Drawing.Point(249, 630);
+            this.PictureBoxStudentImage.Name = "PictureBoxStudentImage";
+            this.PictureBoxStudentImage.Size = new System.Drawing.Size(125, 125);
+            this.PictureBoxStudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxStudentImage.TabIndex = 39;
+            this.PictureBoxStudentImage.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(210, 61);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // AddStudentForm
             // 

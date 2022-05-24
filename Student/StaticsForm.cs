@@ -22,7 +22,6 @@ namespace LoginForm
             Student student = new Student();
             chartStudent.Titles["Title1"].Text = "Total Student: " + student.getTotalStudent();
             chartStudent.Series["Series1"].IsValueShownAsLabel = true;
-            MessageBox.Show(student.getTotalStudentMale() + "and" + student.getTotalStudentFeMale());
             chartStudent.Series["Series1"].Points.AddXY("Male", student.getTotalStudentMale());
             chartStudent.Series["Series1"].Points.AddXY("FeMale", student.getTotalStudentFeMale());
         }

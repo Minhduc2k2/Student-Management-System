@@ -39,6 +39,11 @@ namespace Student_Management_System
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.buttonRegister = new System.Windows.Forms.Button();
+            this.radioButtonStudent = new System.Windows.Forms.RadioButton();
+            this.radioButtonHR = new System.Windows.Forms.RadioButton();
+            this.labelForgot = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.buttonGetPassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -156,12 +161,76 @@ namespace Student_Management_System
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
+            // radioButtonStudent
+            // 
+            this.radioButtonStudent.AutoSize = true;
+            this.radioButtonStudent.Checked = true;
+            this.radioButtonStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonStudent.Location = new System.Drawing.Point(72, 361);
+            this.radioButtonStudent.Name = "radioButtonStudent";
+            this.radioButtonStudent.Size = new System.Drawing.Size(87, 24);
+            this.radioButtonStudent.TabIndex = 13;
+            this.radioButtonStudent.TabStop = true;
+            this.radioButtonStudent.Text = "Student";
+            this.radioButtonStudent.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonHR
+            // 
+            this.radioButtonHR.AutoSize = true;
+            this.radioButtonHR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonHR.Location = new System.Drawing.Point(291, 361);
+            this.radioButtonHR.Name = "radioButtonHR";
+            this.radioButtonHR.Size = new System.Drawing.Size(161, 24);
+            this.radioButtonHR.TabIndex = 14;
+            this.radioButtonHR.Text = "Human Resource";
+            this.radioButtonHR.UseVisualStyleBackColor = true;
+            // 
+            // labelForgot
+            // 
+            this.labelForgot.AutoSize = true;
+            this.labelForgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelForgot.Location = new System.Drawing.Point(69, 572);
+            this.labelForgot.Name = "labelForgot";
+            this.labelForgot.Size = new System.Drawing.Size(131, 18);
+            this.labelForgot.TabIndex = 15;
+            this.labelForgot.Text = "Forgot Password?";
+            this.labelForgot.Click += new System.EventHandler(this.labelForgot_Click);
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(209, 571);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(236, 22);
+            this.textBoxEmail.TabIndex = 16;
+            this.textBoxEmail.Visible = false;
+            // 
+            // buttonGetPassword
+            // 
+            this.buttonGetPassword.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonGetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGetPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonGetPassword.Location = new System.Drawing.Point(72, 613);
+            this.buttonGetPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonGetPassword.Name = "buttonGetPassword";
+            this.buttonGetPassword.Size = new System.Drawing.Size(373, 29);
+            this.buttonGetPassword.TabIndex = 17;
+            this.buttonGetPassword.Text = "Get Password";
+            this.buttonGetPassword.UseVisualStyleBackColor = false;
+            this.buttonGetPassword.Visible = false;
+            this.buttonGetPassword.Click += new System.EventHandler(this.buttonGetPassword_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(505, 614);
+            this.ClientSize = new System.Drawing.Size(505, 649);
+            this.Controls.Add(this.buttonGetPassword);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.labelForgot);
+            this.Controls.Add(this.radioButtonHR);
+            this.Controls.Add(this.radioButtonStudent);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TextBoxPassword);
@@ -196,6 +265,11 @@ namespace Student_Management_System
         private System.Windows.Forms.TextBox TextBoxPassword;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button buttonRegister;
+        private System.Windows.Forms.RadioButton radioButtonStudent;
+        private System.Windows.Forms.RadioButton radioButtonHR;
+        private System.Windows.Forms.Label labelForgot;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Button buttonGetPassword;
     }
 }
 

@@ -79,6 +79,9 @@ namespace LoginForm
             //    Export_Data_To_Word(DataGridView1, sfd.FileName);
             //    MessageBox.Show("Save successful!!!", "Save File docx", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
+
+
+
             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
@@ -99,27 +102,15 @@ namespace LoginForm
                 worksheet.Cells[1, i] = DataGridView1.Columns[i - 1].HeaderText;
             }
             // storing Each row and column value to excel sheet  
-            for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < DataGridView1.Rows.Count; i++)
             {
                 for (int j = 0; j < DataGridView1.Columns.Count; j++)
                 {
-                    if (j == 7)
-                    {
-                        //worksheet.Cells[i + 2, j + 1] = DataGridView1.Rows[i].Cells[j].Value.ToString();
-                        byte[] imgbyte = (byte[])DataGridView1.Rows[i].Cells[7].Value;
-                        MemoryStream ms = new MemoryStream(imgbyte);
-                        System.Drawing.Image sparePicture = System.Drawing.Image.FromStream(ms);
-                        System.Drawing.Image finalPic = (System.Drawing.Image)(new Bitmap(sparePicture, new
-                        Size(90, 90)));
-                        Clipboard.SetDataObject(finalPic);
-                        worksheet.Cells[i + 2, j + 1] = DataGridView1.Rows[i].Cells[j].Value.ToString();
-                    }
-                    else
-                        worksheet.Cells[i + 2, j + 1] = DataGridView1.Rows[i].Cells[j].Value.ToString();
+                    worksheet.Cells[i + 2, j + 1] = DataGridView1.Rows[i].Cells[j].Value.ToString();
                 }
             }
             // save the application  
-            workbook.SaveAs("D:\\DUc\\Winform", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            workbook.SaveAs("D:\\DUc\\Course", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application  
             app.Quit();
         }

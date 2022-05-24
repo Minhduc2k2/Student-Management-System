@@ -1,8 +1,7 @@
 ﻿using Student_Management_System;
 using System;
+using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace LoginForm
@@ -16,13 +15,15 @@ namespace LoginForm
         Course course = new Course();
         Score score = new Score();
         Student student = new Student();
+        MY_DB myDB = new MY_DB();
         private void ScoreForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'myDBDataSet1.student' table. You can move, or remove it, as needed.
-            //this.studentTableAdapter.Fill(this.myDBDataSet1.student);
-            comboBoxCourse.DataSource = course.getAllCourses();
-            comboBoxCourse.DisplayMember = "label";
-            comboBoxCourse.ValueMember = "id";
+
+            //comboBoxCourse.DataSource = course.getAllCourses();
+            //comboBoxCourse.DisplayMember = "label";
+            //comboBoxCourse.ValueMember = "id";
+
+
 
             SqlCommand command = new SqlCommand("Select id, fname, lname from student");
             DataGridView1.ReadOnly = true;
@@ -38,10 +39,69 @@ namespace LoginForm
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             TextBoxStudentId.Text = DataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            SqlCommand commandCombo = new SqlCommand("SELECT course_id FROM score WHERE student_id = @student_id", myDB.getConnection);
+            commandCombo.Parameters.Add("@student_id", SqlDbType.Int).Value = int.Parse(TextBoxStudentId.Text);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandCombo);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            string id ="";
+            DataTable tableCourse = new DataTable();
+            DataTable tableCourse_pro = new DataTable();
+            tableCourse_pro.Columns.Add("id", typeof(String));
+            tableCourse_pro.Columns.Add("label", typeof(String));
+            DataRow row;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                id = table.Rows[i]["course_id"].ToString().Trim();
+                MessageBox.Show(id);
+
+                tableCourse = course.getCourseLikeId(id);
+
+                row = tableCourse_pro.NewRow();
+                MessageBox.Show(tableCourse.Rows[0]["id"].ToString());
+                MessageBox.Show(tableCourse.Rows[0]["label"].ToString());
+
+                row["id"] = tableCourse.Rows[0]["id"].ToString();
+                row["label"] = tableCourse.Rows[0]["label"].ToString();
+                tableCourse_pro.Rows.Add(row);
+            }
+
+            comboBoxCourse.DataSource = tableCourse_pro;
+            comboBoxCourse.DisplayMember = "label";
+            comboBoxCourse.ValueMember = "id";
         }
 
         private void ButtonAddCourse_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    int studentId = Int32.Parse(TextBoxStudentId.Text.Trim());
+            //    string courseId = comboBoxCourse.SelectedValue.ToString();
+            //    float scoreValue = Int32.Parse(TextBoxScore.Text.Trim());
+            //    string description = TextBoxDescription.Text.Trim();
+
+            //    if (!score.studentScoreExit(studentId, courseId))
+            //    {
+            //        if (score.insertScore(studentId, courseId, scoreValue, description))
+            //        {
+            //            MessageBox.Show("Score has been inserted", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Something went wrong", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("The score for this course has been already set", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
             try
             {
                 int studentId = Int32.Parse(TextBoxStudentId.Text.Trim());
@@ -49,9 +109,9 @@ namespace LoginForm
                 float scoreValue = Int32.Parse(TextBoxScore.Text.Trim());
                 string description = TextBoxDescription.Text.Trim();
 
-                if(!score.studentScoreExit(studentId, courseId))
+                if (!score.studentScoreExit(studentId, courseId))
                 {
-                    if(score.insertScore(studentId, courseId, scoreValue, description))
+                    if (score.updateScore(studentId, courseId, scoreValue, description, 1))
                     {
                         MessageBox.Show("Score has been inserted", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -62,13 +122,19 @@ namespace LoginForm
                 }
                 else
                 {
-                    MessageBox.Show("The score for this course has been already set","Add Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The score for this course has been already set", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void comboBoxCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

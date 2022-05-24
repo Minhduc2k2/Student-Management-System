@@ -58,86 +58,7 @@ namespace Student_Management_System
             processBarForm.ShowDialog();
 
             Student student = new Student();
-            //if (radioButtonID.Checked)
-            //{
-            //    int id = int.Parse(TextBoxStudentId.Text.Trim());
-            //    SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE id = " + id);
-
-            //    DataTable table = student.getStudents(command);
-
-            //    if (table.Rows.Count > 0)
-            //    {
-            //        TextBoxFname.Text = table.Rows[0]["fname"].ToString();
-            //        TextBoxLname.Text = table.Rows[0]["lname"].ToString();
-            //        dateTimePicker1.Value = (DateTime)table.Rows[0]["bdate"];
-
-            //        if (table.Rows[0]["gender"].ToString() == "Female")
-            //        {
-            //            RadioButtonFemale.Checked = true;
-            //        }
-            //        else
-            //        {
-            //            RadioButtonMale.Checked = true;
-            //        }
-            //        TextBoxPhone.Text = table.Rows[0]["phone"].ToString();
-            //        TextBoxAddress.Text = table.Rows[0]["address"].ToString();
-
-            //        byte[] pic = (byte[])table.Rows[0]["picture"];
-            //        MemoryStream picture = new MemoryStream(pic);
-            //        PictureBoxStudentImage.Image = Image.FromStream(picture);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    }
-            //}
-            //else if (radioButtonPhone.Checked)
-            //{
-            //    int phone = int.Parse(TextBoxPhone.Text.Trim());
-            //    SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE phone = " + phone);
-
-            //    DataTable table = student.getStudents(command);
-
-            //    if (table.Rows.Count > 0)
-            //    {
-            //        TextBoxFname.Text = table.Rows[0]["fname"].ToString();
-            //        TextBoxLname.Text = table.Rows[0]["lname"].ToString();
-            //        dateTimePicker1.Value = (DateTime)table.Rows[0]["bdate"];
-
-            //        if (table.Rows[0]["gender"].ToString() == "Female")
-            //        {
-            //            RadioButtonFemale.Checked = true;
-            //        }
-            //        else
-            //        {
-            //            RadioButtonMale.Checked = true;
-            //        }
-            //        TextBoxPhone.Text = table.Rows[0]["phone"].ToString();
-            //        TextBoxAddress.Text = table.Rows[0]["address"].ToString();
-
-            //        byte[] pic = (byte[])table.Rows[0]["picture"];
-            //        MemoryStream picture = new MemoryStream(pic);
-            //        PictureBoxStudentImage.Image = Image.FromStream(picture);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    }
-            //}
-            //else if (radioButtonFistName.Checked)
-            //{
-            //    string firstName = TextBoxFname.Text.Trim();
-            //    FirstNameForm firstNameForm = new FirstNameForm(firstName);
-            //    firstNameForm.Show();
-            //}
-            //else
-            //{
-            //    string firstName = TextBoxFname.Text.Trim();
-            //    string lastName = TextBoxLname.Text.Trim();
-            //    FirstNameForm firstNameForm = new FirstNameForm(firstName, lastName);
-            //    firstNameForm.Show();
-
-            //}
+            
             if(comboBox1.Text == "ID")
             {
                 int id = int.Parse(TextBoxStudentId.Text.Trim());
@@ -375,6 +296,12 @@ namespace Student_Management_System
             {
                 MessageBox.Show("Please Enter A Valid ID", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ButtonAddCourse_Click_1(object sender, EventArgs e)
+        {
+            AddSemesterForm addSemesterForm = new AddSemesterForm(TextBoxStudentId.Text);
+            addSemesterForm.Show(this);
         }
     }
 }

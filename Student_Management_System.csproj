@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Words">
+      <HintPath>C:\Users\thanh\Downloads\XuatBaoCaoWordBangMailMergeAspose-main\Dll\Aspose.Words.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -78,10 +81,106 @@
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Course\Course.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Human Resource\AddClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\AddClassForm.Designer.cs">
+      <DependentUpon>AddClassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\Contact.cs" />
+    <Compile Include="Human Resource\ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\EditContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\EditContactForm.Designer.cs">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\AddContactForm.Designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\AddHRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\AddHRForm.Designer.cs">
+      <DependentUpon>AddHRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\FullClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\FullClass.Designer.cs">
+      <DependentUpon>FullClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\FullContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\FullContact.Designer.cs">
+      <DependentUpon>FullContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\FullStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human Resource\FullStudent.Designer.cs">
+      <DependentUpon>FullStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human Resource\HumanResource.cs" />
+    <Compile Include="Human Resource\MyClass.cs" />
+    <Compile Include="Lib\ReportExtensionMethod.cs" />
     <Compile Include="myDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>myDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Result\StaticScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result\StaticScoreForm.Designer.cs">
+      <DependentUpon>StaticScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result\ResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result\ResultForm.Designer.cs">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result\StaticResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result\StaticResultForm.Designer.cs">
+      <DependentUpon>StaticResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result\PassFailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result\PassFailForm.Designer.cs">
+      <DependentUpon>PassFailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\ManageScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\ManageScoreForm.Designer.cs">
+      <DependentUpon>ManageScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\AvgScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\AvgScoreForm.Designer.cs">
+      <DependentUpon>AvgScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Score\PrintSaveScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\PrintSaveScoreForm.Designer.cs">
+      <DependentUpon>PrintSaveScoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Score\RemoveScoreForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +194,12 @@
     </Compile>
     <Compile Include="Score\AddScoreForm.Designer.cs">
       <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\AddSemesterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\AddSemesterForm.Designer.cs">
+      <DependentUpon>AddSemesterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Student\FirstNameForm.cs">
       <SubType>Form</SubType>
@@ -192,11 +297,59 @@
     <EmbeddedResource Include="Course\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\AddClassForm.resx">
+      <DependentUpon>AddClassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\EditContactForm.resx">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\AddHRForm.resx">
+      <DependentUpon>AddHRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\FullClass.resx">
+      <DependentUpon>FullClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\FullContact.resx">
+      <DependentUpon>FullContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human Resource\FullStudent.resx">
+      <DependentUpon>FullStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result\StaticScoreForm.resx">
+      <DependentUpon>StaticScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result\ResultForm.resx">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result\StaticResultForm.resx">
+      <DependentUpon>StaticResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result\PassFailForm.resx">
+      <DependentUpon>PassFailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\ManageScoreForm.resx">
+      <DependentUpon>ManageScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\AvgScoreForm.resx">
+      <DependentUpon>AvgScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\PrintSaveScoreForm.resx">
+      <DependentUpon>PrintSaveScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Score\RemoveScoreForm.resx">
       <DependentUpon>RemoveScoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Score\AddScoreForm.resx">
       <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\AddSemesterForm.resx">
+      <DependentUpon>AddSemesterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\FirstNameForm.resx">
       <DependentUpon>FirstNameForm.cs</DependentUpon>
@@ -349,6 +502,8 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Template\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
