@@ -1,12 +1,11 @@
-﻿using Student_Management_System;
+﻿using Aspose.Words;
+using Aspose.Words.Tables;
+using ThuVienWinform.Report.AsposeWordExtension;
+//using Microsoft.Office.Interop.Word;
+using Student_Management_System;
 using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Aspose.Words;
-using ThuVienWinform.Report.AsposeWordExtension;
-using Word = Microsoft.Office.Interop.Word;
-using Microsoft.Office.Interop.Word;
 
 namespace LoginForm
 {
@@ -66,7 +65,7 @@ namespace LoginForm
                 }
                 AVGscore = AVGscore / count;
                 table.Rows[i]["Average Score"] = AVGscore.ToString();
-                if(Score.flag == false)
+                if (Score.flag == false)
                 {
                     table.Rows[i]["Result"] = CheckResult(AVGscore);
                 }
@@ -115,7 +114,7 @@ namespace LoginForm
             {
                 return "Pass";
             }
-            else if(AVGscore >= 5)
+            else if (AVGscore >= 5)
             {
                 return "Pass";
             }
@@ -212,37 +211,76 @@ namespace LoginForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int RowCount = DataGridView1.Rows.Count;
-            int ColumnCount = DataGridView1.Columns.Count;
-            Word.Document oDoc = new Word.Document();
-            oDoc.Application.Visible = true;
-            oDoc.PageSetup.Orientation = Word.WdOrientation.wdOrientLandscape;
-            //dynamic oRange = oDoc.Content.Application.Selection.Range;
-            string oTemp = "";
-            Object oMissing = System.Reflection.Missing.Value;
-            /*oDoc.MailMerge.Execute(new[] {"MSSV"});
-            oDoc.MailMerge.Execute(new[] { "Tên" });
-            oDoc.MailMerge.Execute(new[] { "Tên lót" });
-            oDoc.MailMerge.Execute(new[] { "Ngày sinh" });
-            oDoc.MailMerge.Execute(new[] { "Giới tính" });
-            oDoc.MailMerge.Execute(new[] { "Số điện thoại" });
-            oDoc.MailMerge.Execute(new[] { "Địa chỉ" });
-            oDoc.MailMerge.Execute(new[] { "Hình ảnh" });*/
-            Microsoft.Office.Interop.Word.Range rng = oDoc.Range(0, 0);
-            Table thongtin = oDoc.Tables.Add(rng, DataGridView1.Rows.Count, DataGridView1.Columns.Count);
-            thongtin.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleDouble;
-            thongtin.Borders.InsideLineStyle = WdLineStyle.wdLineStyleSingle;
+            //int RowCount = DataGridView1.Rows.Count;
+            //int ColumnCount = DataGridView1.Columns.Count;
+            //Word.Document oDoc = new Word.Document();
+            //oDoc.Application.Visible = true;
+            //oDoc.PageSetup.Orientation = Word.WdOrientation.wdOrientLandscape;
+            ////dynamic oRange = oDoc.Content.Application.Selection.Range;
+            //string oTemp = "";
+            //Object oMissing = System.Reflection.Missing.Value;
+            ///*oDoc.MailMerge.Execute(new[] {"MSSV"});
+            //oDoc.MailMerge.Execute(new[] { "Tên" });
+            //oDoc.MailMerge.Execute(new[] { "Tên lót" });
+            //oDoc.MailMerge.Execute(new[] { "Ngày sinh" });
+            //oDoc.MailMerge.Execute(new[] { "Giới tính" });
+            //oDoc.MailMerge.Execute(new[] { "Số điện thoại" });
+            //oDoc.MailMerge.Execute(new[] { "Địa chỉ" });
+            //oDoc.MailMerge.Execute(new[] { "Hình ảnh" });*/
+            //Microsoft.Office.Interop.Word.Range rng = oDoc.Range(0, 0);
+            //Table thongtin = oDoc.Tables.Add(rng, DataGridView1.Rows.Count, DataGridView1.Columns.Count);
+            //thongtin.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleDouble;
+            //thongtin.Borders.InsideLineStyle = WdLineStyle.wdLineStyleSingle;
 
-            for (int r = 0; r < RowCount - 1; r++)
+            //for (int r = 0; r < RowCount - 1; r++)
+            //{
+            //    oTemp = "";
+            //    for (int c = 0; c < ColumnCount; c++)
+            //    {
+            //        //bdate.ToString("yyyy-MM-dd")
+            //        oTemp = oTemp + DataGridView1.Rows[r].Cells[c].Value + " | ";
+            //        thongtin.Cell(r + 1, c + 1).Range.InsertAfter(DataGridView1.Rows[r].Cells[c].Value.ToString());
+            //    }
+            //}
+
+            Document report = new Document("Template\\Mau_Diem.doc");
+
+            //Bước 2: Điền các thông tin cố định
+
+            //Bước 3: Điền thông tin lên bảng
+            Table dt = report.GetChild(NodeType.Table, 1, true) as Table;//Lấy bảng thứ 1 trong file mẫu
+            int currentRow = 0;
+
+            dt.InsertRows(currentRow, currentRow, DataGridView1.Rows.Count);
+
+            dt.PutValue(currentRow, 0, DataGridView1.CurrentRow.Cells[0].Value.ToString());//Cột STT
+            string fullname = DataGridView1.CurrentRow.Cells[1].Value.ToString() + " " + DataGridView1.CurrentRow.Cells[2].Value.ToString();
+            dt.PutValue(currentRow, 1, fullname);//Cột STT
+
+            int j = 1;
+            for (int i = 3; i < DataGridView1.Columns.Count; i++)
             {
-                oTemp = "";
-                for (int c = 0; c < ColumnCount; c++)
-                {
-                    //bdate.ToString("yyyy-MM-dd")
-                    oTemp = oTemp + DataGridView1.Rows[r].Cells[c].Value + " | ";
-                    thongtin.Cell(r + 1, c + 1).Range.InsertAfter(DataGridView1.Rows[r].Cells[c].Value.ToString());
-                }
+                //dt.PutValue(i + 1, 0, DataGridView1.Columns[i + 3].HeaderText); //Cột STT
+                //dt.PutValue(i + 1, 1, DataGridView1.CurrentRow.Cells[i + 3].Value.ToString());
+                dt.PutValue(j, 0, DataGridView1.Columns[i].HeaderText); //Cột STT
+                dt.PutValue(j, 1, DataGridView1.CurrentRow.Cells[i].Value.ToString());
+                j++;
             }
+            string avg = DataGridView1.CurrentRow.Cells[6].Value.ToString();
+            report.MailMerge.Execute(new[] { "AVG" }, new[] { avg });
+            string res = DataGridView1.CurrentRow.Cells[7].Value.ToString();
+            if (res.Equals("Pass"))
+                res = "Qua Môn";
+            else
+                res = "Rớt Môn";
+            report.MailMerge.Execute(new[] { "Result" }, new[] { res });
+            var now = DateTime.Now;
+            report.MailMerge.Execute(new[] { "Ngay_Thang_Nam_BC" }, new[] { string.Format("TP Hồ Chí Minh, ngày {0} tháng {1} năm {2}", now.Day, now.Month, now.Year) });
+
+            //Bước 4: Lưu và mở file
+            report.SaveAndOpenFile("report.doc");
+
         }
     }
 }
+

@@ -101,7 +101,7 @@ namespace LoginForm
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(236, 46);
             this.buttonSave.TabIndex = 55;
-            this.buttonSave.Text = "Save To Excel File 📄";
+            this.buttonSave.Text = "Save To Word File 📄";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 

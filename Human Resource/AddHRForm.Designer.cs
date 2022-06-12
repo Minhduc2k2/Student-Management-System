@@ -85,7 +85,6 @@ namespace Student_Management_System
             this.TextBoxId.Size = new System.Drawing.Size(249, 23);
             this.TextBoxId.TabIndex = 7;
             this.TextBoxId.Tag = "";
-            this.TextBoxId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxStudentId_KeyPress);
             // 
             // panel1
             // 
@@ -137,7 +136,6 @@ namespace Student_Management_System
             this.TextBoxFname.Size = new System.Drawing.Size(249, 23);
             this.TextBoxFname.TabIndex = 16;
             this.TextBoxFname.Tag = "";
-            this.TextBoxFname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxFname_KeyPress);
             // 
             // label5
             // 
@@ -170,7 +168,6 @@ namespace Student_Management_System
             this.TextBoxLname.Size = new System.Drawing.Size(249, 23);
             this.TextBoxLname.TabIndex = 19;
             this.TextBoxLname.Tag = "";
-            this.TextBoxLname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxLname_KeyPress);
             // 
             // label6
             // 
@@ -203,7 +200,6 @@ namespace Student_Management_System
             this.TextBoxUserName.Size = new System.Drawing.Size(249, 23);
             this.TextBoxUserName.TabIndex = 28;
             this.TextBoxUserName.Tag = "";
-            this.TextBoxUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPhone_KeyPress);
             // 
             // label9
             // 
@@ -237,7 +233,6 @@ namespace Student_Management_System
             this.TextBoxPassword.Size = new System.Drawing.Size(249, 23);
             this.TextBoxPassword.TabIndex = 33;
             this.TextBoxPassword.Tag = "";
-            this.TextBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAddress_KeyPress);
             // 
             // panel9
             // 
@@ -322,7 +317,6 @@ namespace Student_Management_System
             this.TextBoxEmail.Location = new System.Drawing.Point(206, 465);
             this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxEmail.Name = "TextBoxEmail";
-            this.TextBoxEmail.PasswordChar = '*';
             this.TextBoxEmail.Size = new System.Drawing.Size(249, 23);
             this.TextBoxEmail.TabIndex = 41;
             this.TextBoxEmail.Tag = "";

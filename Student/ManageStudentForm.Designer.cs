@@ -127,6 +127,7 @@ namespace LoginForm
             // DataGridView1
             // 
             this.DataGridView1.AutoGenerateColumns = false;
+            this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -154,7 +155,6 @@ namespace LoginForm
             this.idDataGridViewTextBoxColumn.HeaderText = "Student ID";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // fnameDataGridViewTextBoxColumn
             // 
@@ -163,7 +163,6 @@ namespace LoginForm
             this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.fnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
-            this.fnameDataGridViewTextBoxColumn.Width = 115;
             // 
             // lnameDataGridViewTextBoxColumn
             // 
@@ -172,7 +171,6 @@ namespace LoginForm
             this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.lnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
-            this.lnameDataGridViewTextBoxColumn.Width = 115;
             // 
             // bdateDataGridViewTextBoxColumn
             // 
@@ -181,7 +179,6 @@ namespace LoginForm
             this.bdateDataGridViewTextBoxColumn.HeaderText = "Birthday";
             this.bdateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.bdateDataGridViewTextBoxColumn.Name = "bdateDataGridViewTextBoxColumn";
-            this.bdateDataGridViewTextBoxColumn.Width = 125;
             // 
             // genderDataGridViewTextBoxColumn
             // 
@@ -190,7 +187,6 @@ namespace LoginForm
             this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
             this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.Width = 85;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
@@ -199,7 +195,6 @@ namespace LoginForm
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone Number";
             this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.Width = 115;
             // 
             // addressDataGridViewTextBoxColumn
             // 
@@ -208,7 +203,6 @@ namespace LoginForm
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Width = 122;
             // 
             // pictureDataGridViewImageColumn
             // 
@@ -217,7 +211,6 @@ namespace LoginForm
             this.pictureDataGridViewImageColumn.HeaderText = "Avatar";
             this.pictureDataGridViewImageColumn.MinimumWidth = 6;
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
-            this.pictureDataGridViewImageColumn.Width = 122;
             // 
             // pictureBox1
             // 

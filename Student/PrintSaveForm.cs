@@ -108,6 +108,7 @@ namespace LoginForm
             //}
             if (DataGridView1.Rows.Count != 0)
             {
+
                 int RowCount = DataGridView1.Rows.Count;
                 int ColumnCount = DataGridView1.Columns.Count;
                 Object[,] DataArray = new object[RowCount + 1, ColumnCount + 1];
@@ -154,6 +155,15 @@ namespace LoginForm
                     Type.Missing, ref AutoFit, ref AutoFitBehavior, Type.Missing);
 
                 oRange.Select();
+                //Header Text
+                foreach (Word.Section section in oDoc.Application.ActiveDocument.Sections)
+                {
+                    Word.Range headerRange = section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
+                    headerRange.Fields.Add(headerRange, Word.WdFieldType.wdFieldPage);
+                    headerRange.Text = "DANH SÁCH SINH VIÊN";
+                    headerRange.Font.Size = 16;
+                    headerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                }
 
                 oDoc.Application.Selection.Tables[1].Select();
                 oDoc.Application.Selection.Tables[1].Rows.AllowBreakAcrossPages = 0;
@@ -221,8 +231,15 @@ namespace LoginForm
             sfd.FileName = "Student.doc";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                Export_Data_To_Word(DataGridView1, sfd.FileName);
-                MessageBox.Show("Save successful!!!", "Save File docx", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    Export_Data_To_Word(DataGridView1, sfd.FileName);
+                    MessageBox.Show("Save successful!!!", "Save File docx", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch(Exception ex)
+                {
+                    //MessageBox.Show(ex.Message, "Print Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             //// creating Excel Application  
             //Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();

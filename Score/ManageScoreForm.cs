@@ -41,11 +41,31 @@ namespace LoginForm
         {
             TextBoxStudentId.Text = DataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
-
+        bool check_IsValid()
+        {
+            if (TextBoxStudentId.Text.Trim() == "" || TextBoxScore.Text.Trim() == "" || TextBoxDescription.Text.Trim() == "")
+            {
+                MessageBox.Show("Empty Field", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (!int.TryParse(TextBoxStudentId.Text.Trim(), out int _))
+            {
+                MessageBox.Show("ID must be a number", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (!int.TryParse(TextBoxScore.Text.Trim(), out int _))
+            {
+                MessageBox.Show("Score must be a number", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         private void ButtonAddCourse_Click(object sender, EventArgs e)
         {
             try
             {
+                if (!check_IsValid())
+                    return;
                 int studentId = Int32.Parse(TextBoxStudentId.Text.Trim());
                 string courseId = comboBoxCourse.SelectedValue.ToString();
                 float scoreValue = Int32.Parse(TextBoxScore.Text.Trim());

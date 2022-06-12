@@ -58,8 +58,8 @@ namespace Student_Management_System
             processBarForm.ShowDialog();
 
             Student student = new Student();
-            
-            if(comboBox1.Text == "ID")
+
+            if (comboBox1.Text == "ID")
             {
                 int id = int.Parse(TextBoxStudentId.Text.Trim());
                 SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE id = " + id);
@@ -68,8 +68,8 @@ namespace Student_Management_System
 
                 if (table.Rows.Count > 0)
                 {
-                    TextBoxFname.Text = table.Rows[0]["fname"].ToString();
-                    TextBoxLname.Text = table.Rows[0]["lname"].ToString();
+                    TextBoxFname.Text = table.Rows[0]["fname"].ToString().Trim();
+                    TextBoxLname.Text = table.Rows[0]["lname"].ToString().Trim();
                     dateTimePicker1.Value = (DateTime)table.Rows[0]["bdate"];
 
                     if (table.Rows[0]["gender"].ToString() == "Female")
@@ -80,8 +80,8 @@ namespace Student_Management_System
                     {
                         RadioButtonMale.Checked = true;
                     }
-                    TextBoxPhone.Text = table.Rows[0]["phone"].ToString();
-                    TextBoxAddress.Text = table.Rows[0]["address"].ToString();
+                    TextBoxPhone.Text = table.Rows[0]["phone"].ToString().Trim();
+                    TextBoxAddress.Text = table.Rows[0]["address"].ToString().Trim();
 
                     byte[] pic = (byte[])table.Rows[0]["picture"];
                     MemoryStream picture = new MemoryStream(pic);
@@ -92,7 +92,7 @@ namespace Student_Management_System
                     MessageBox.Show("Not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            else if(comboBox1.Text == "Phone")
+            else if (comboBox1.Text == "Phone")
             {
                 int phone = int.Parse(TextBoxPhone.Text.Trim());
                 SqlCommand command = new SqlCommand("SELECT id, fname, lname, bdate, gender, phone, address, picture FROM student WHERE phone = " + phone);
@@ -101,8 +101,8 @@ namespace Student_Management_System
 
                 if (table.Rows.Count > 0)
                 {
-                    TextBoxFname.Text = table.Rows[0]["fname"].ToString();
-                    TextBoxLname.Text = table.Rows[0]["lname"].ToString();
+                    TextBoxFname.Text = table.Rows[0]["fname"].ToString().Trim();
+                    TextBoxLname.Text = table.Rows[0]["lname"].ToString().Trim();
                     dateTimePicker1.Value = (DateTime)table.Rows[0]["bdate"];
 
                     if (table.Rows[0]["gender"].ToString() == "Female")
@@ -113,8 +113,8 @@ namespace Student_Management_System
                     {
                         RadioButtonMale.Checked = true;
                     }
-                    TextBoxPhone.Text = table.Rows[0]["phone"].ToString();
-                    TextBoxAddress.Text = table.Rows[0]["address"].ToString();
+                    TextBoxPhone.Text = table.Rows[0]["phone"].ToString().Trim();
+                    TextBoxAddress.Text = table.Rows[0]["address"].ToString().Trim();
 
                     byte[] pic = (byte[])table.Rows[0]["picture"];
                     MemoryStream picture = new MemoryStream(pic);
@@ -125,16 +125,16 @@ namespace Student_Management_System
                     MessageBox.Show("Not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            else if(comboBox1.Text == "FirstName")
+            else if (comboBox1.Text == "FirstName")
             {
                 string firstName = TextBoxFname.Text.Trim();
                 FirstNameForm firstNameForm = new FirstNameForm(firstName);
                 firstNameForm.Show();
             }
-            else if(comboBox1.Text == "Name")
+            else if (comboBox1.Text == "Name")
             {
-                string firstName = TextBoxFname.Text.Trim();
-                string lastName = TextBoxLname.Text.Trim();
+                string firstName = TextBoxFname.Text.Trim().Trim();
+                string lastName = TextBoxLname.Text.Trim().Trim();
                 FirstNameForm firstNameForm = new FirstNameForm(firstName, lastName);
                 firstNameForm.Show();
             }
@@ -189,17 +189,17 @@ namespace Student_Management_System
         private void ButtonEditStudent_Click(object sender, EventArgs e)
         {
 
-            if (checkRegex())
+            try
             {
-                try
+                if (checkRegex())
                 {
                     Student student = new Student();
-                    int id = Convert.ToInt32(TextBoxStudentId.Text);
-                    string fname = TextBoxFname.Text;
-                    string lname = TextBoxLname.Text;
+                    int id = Convert.ToInt32(TextBoxStudentId.Text.Trim());
+                    string fname = TextBoxFname.Text.Trim();
+                    string lname = TextBoxLname.Text.Trim();
                     DateTime bdate = dateTimePicker1.Value;
-                    string phone = TextBoxPhone.Text;
-                    string address = TextBoxAddress.Text;
+                    string phone = TextBoxPhone.Text.Trim();
+                    string address = TextBoxAddress.Text.Trim();
                     string gender;
                     if (RadioButtonMale.Checked)
                         gender = "Male";
@@ -219,15 +219,11 @@ namespace Student_Management_System
                         MessageBox.Show("Error", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
             }
-            //else
-            //{
-            //    MessageBox.Show("Empty Fields", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         private void TextBoxFname_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -292,9 +288,9 @@ namespace Student_Management_System
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Please Enter A Valid ID", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

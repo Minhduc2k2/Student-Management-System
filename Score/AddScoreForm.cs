@@ -53,17 +53,14 @@ namespace LoginForm
             DataRow row;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                id = table.Rows[i]["course_id"].ToString().Trim();
-                MessageBox.Show(id);
+                id = table.Rows[i]["course_id"].ToString().Trim().Trim();
 
                 tableCourse = course.getCourseLikeId(id);
 
                 row = tableCourse_pro.NewRow();
-                MessageBox.Show(tableCourse.Rows[0]["id"].ToString());
-                MessageBox.Show(tableCourse.Rows[0]["label"].ToString());
 
-                row["id"] = tableCourse.Rows[0]["id"].ToString();
-                row["label"] = tableCourse.Rows[0]["label"].ToString();
+                row["id"] = tableCourse.Rows[0]["id"].ToString().Trim();
+                row["label"] = tableCourse.Rows[0]["label"].ToString().Trim();
                 tableCourse_pro.Rows.Add(row);
             }
 
@@ -71,39 +68,32 @@ namespace LoginForm
             comboBoxCourse.DisplayMember = "label";
             comboBoxCourse.ValueMember = "id";
         }
-
+        bool check_IsValid()
+        {
+            if(TextBoxStudentId.Text.Trim() =="" || TextBoxScore.Text.Trim() == "" || TextBoxDescription.Text.Trim() == "")
+            {
+                MessageBox.Show("Empty Field", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if(!int.TryParse(TextBoxStudentId.Text.Trim(), out int _))
+            {
+                MessageBox.Show("ID must be a number", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (!int.TryParse(TextBoxScore.Text.Trim(), out int _))
+            {
+                MessageBox.Show("Score must be a number", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         private void ButtonAddCourse_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    int studentId = Int32.Parse(TextBoxStudentId.Text.Trim());
-            //    string courseId = comboBoxCourse.SelectedValue.ToString();
-            //    float scoreValue = Int32.Parse(TextBoxScore.Text.Trim());
-            //    string description = TextBoxDescription.Text.Trim();
-
-            //    if (!score.studentScoreExit(studentId, courseId))
-            //    {
-            //        if (score.insertScore(studentId, courseId, scoreValue, description))
-            //        {
-            //            MessageBox.Show("Score has been inserted", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Something went wrong", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("The score for this course has been already set", "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Add Score", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
 
             try
             {
+                if (!check_IsValid())
+                    return;
                 int studentId = Int32.Parse(TextBoxStudentId.Text.Trim());
                 string courseId = comboBoxCourse.SelectedValue.ToString();
                 float scoreValue = Int32.Parse(TextBoxScore.Text.Trim());

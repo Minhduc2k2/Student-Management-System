@@ -22,14 +22,21 @@ namespace LoginForm.Human_Resource
         Contact contact = new Contact();
         private void FullContact_Load(object sender, EventArgs e)
         {
-            dataGridViewContact.RowTemplate.Height = 200;
             dataGridViewContact.AllowUserToAddRows = false;
-            dataGridViewContact.RowTemplate.Height = 115;
+            dataGridViewContact.RowTemplate.Height = 100;
             dataGridViewContact.DataSource = contact.getContact();
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             picCol = (DataGridViewImageColumn)dataGridViewContact.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-
+            dataGridViewContact.Columns[0].HeaderText = "ID";
+            dataGridViewContact.Columns[1].HeaderText = "First Name";
+            dataGridViewContact.Columns[2].HeaderText = "Last Name";
+            dataGridViewContact.Columns[3].HeaderText = "Group ID";
+            dataGridViewContact.Columns[4].HeaderText = "Phone";
+            dataGridViewContact.Columns[5].HeaderText = "Email";
+            dataGridViewContact.Columns[6].HeaderText = "Address";
+            dataGridViewContact.Columns[7].HeaderText = "Avatar";
+            dataGridViewContact.Columns[8].HeaderText = "HR ID";
 
             SqlCommand command = new SqlCommand("SELECT id from group_pro", myDB.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);

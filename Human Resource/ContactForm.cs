@@ -46,11 +46,27 @@ namespace LoginForm.Human_Resource
             EditContactForm editContactForm = new EditContactForm();
             editContactForm.ShowDialog();
         }
-
+        bool check_IsExist()
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM group_pro WHERE id = @id AND hr_id = @hr_id", myDB.getConnection);
+            command.Parameters.Add("@id", SqlDbType.NVarChar).Value = textBoxEnterGroupName.Text.Trim();
+            command.Parameters.Add("@hr_id", SqlDbType.Int).Value = Globals.GlobalUserId;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Name has already exist","Contact Form",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return true;
+            }
+            return false;
+        }
         private void buttonAddGroup_Click(object sender, EventArgs e)
         {
             try
             {
+                if (check_IsExist())
+                    return;
                 myDB.openConnection();
                 SqlCommand command = new SqlCommand("INSERT INTO group_pro(id,hr_id) " + "VALUES(@id,@hr_id)", myDB.getConnection);
                 command.Parameters.Add("@id", SqlDbType.NVarChar).Value = textBoxEnterGroupName.Text.Trim();

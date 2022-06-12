@@ -3,6 +3,7 @@ using RegisterForm;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Student_Management_System
@@ -16,12 +17,14 @@ namespace Student_Management_System
         //Tạo đối tượng user
         User user = new User();
         Email email = new Email();
+        string emailRegex = @"^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$";
+
         private void buttonRegister_Click(object sender, EventArgs e)
         {
 
-            string username = TextBoxUserName.Text;
-            string password = TextBoxPassword.Text;
-            string repassword = TextBoxRePassword.Text;
+            string username = TextBoxUserName.Text.Trim();
+            string password = TextBoxPassword.Text.Trim();
+            string repassword = TextBoxRePassword.Text.Trim();
             string mail = TextBoxEmail.Text;
             try
             {
@@ -50,6 +53,12 @@ namespace Student_Management_System
                     //MessageBox.Show("UserName already exists", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     textBoxNotiUserName.Text = "UserName already exists";
                 }
+                else if (!Regex.IsMatch(TextBoxEmail.Text, emailRegex))
+                {
+                    MessageBox.Show("Email is InValid", "Get Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 else
                 {
                     //MessageBox.Show("Empty Fields", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

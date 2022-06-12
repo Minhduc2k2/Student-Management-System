@@ -104,38 +104,39 @@ namespace Student_Management_System
             //Show Process Bar
             ProcessBarForm processBarForm = new ProcessBarForm();
             processBarForm.ShowDialog();
-
-            if (checkRegex())
+            try
             {
-                Student student = new Student();
-                int id = Convert.ToInt32(TextBoxStudentId.Text);
-                string fname = TextBoxFname.Text;
-                string lname = TextBoxLname.Text;
-                DateTime bdate = dateTimePicker1.Value;
-                string phone = TextBoxPhone.Text;
-                string address = TextBoxAddress.Text;
-                string gender;
-                if (RadioButtonMale.Checked)
-                    gender = "Male";
-                else
-                    gender = "FeMale";
-                MemoryStream picture = new MemoryStream();
-                int born_year = dateTimePicker1.Value.Year;
-                int this_year = DateTime.Now.Year;
 
-                PictureBoxStudentImage.Image.Save(picture, PictureBoxStudentImage.Image.RawFormat);
-                if (student.insertStudent(id, fname, lname, bdate, gender, phone, address, picture))
+                if (checkRegex())
                 {
-                    MessageBox.Show("New Student Added", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    Student student = new Student();
+                    int id = Convert.ToInt32(TextBoxStudentId.Text.Trim());
+                    string fname = TextBoxFname.Text.Trim();
+                    string lname = TextBoxLname.Text.Trim();
+                    DateTime bdate = dateTimePicker1.Value;
+                    string phone = TextBoxPhone.Text.Trim();
+                    string address = TextBoxAddress.Text.Trim();
+                    string gender;
+                    if (RadioButtonMale.Checked)
+                        gender = "Male";
+                    else
+                        gender = "FeMale";
+                    MemoryStream picture = new MemoryStream();
+                    PictureBoxStudentImage.Image.Save(picture, PictureBoxStudentImage.Image.RawFormat);
+                    if (student.insertStudent(id, fname, lname, bdate, gender, phone, address, picture))
+                    {
+                        MessageBox.Show("New Student Added", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                        MessageBox.Show("Error", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                    MessageBox.Show("Error", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //else
-            //{
-            //    MessageBox.Show("Empty Fields", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void TextBoxFname_KeyPress(object sender, KeyPressEventArgs e)

@@ -48,6 +48,14 @@ namespace LoginForm
             picCol = (DataGridViewImageColumn)DataGridView1.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             DataGridView1.AllowUserToAddRows = false;
+            DataGridView1.Columns[0].HeaderText = "ID";
+            DataGridView1.Columns[1].HeaderText = "First Name";
+            DataGridView1.Columns[2].HeaderText = "Last Name";
+            DataGridView1.Columns[3].HeaderText = "Birth Day";
+            DataGridView1.Columns[4].HeaderText = "Gender";
+            DataGridView1.Columns[5].HeaderText = "Phone";
+            DataGridView1.Columns[6].HeaderText = "Address";
+            DataGridView1.Columns[7].HeaderText = "Picture";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -69,36 +77,15 @@ namespace LoginForm
             picCol = (DataGridViewImageColumn)DataGridView1.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             DataGridView1.AllowUserToAddRows = false;
+            DataGridView1.Columns[0].HeaderText = "ID";
+            DataGridView1.Columns[1].HeaderText = "First Name";
+            DataGridView1.Columns[2].HeaderText = "Last Name";
+            DataGridView1.Columns[3].HeaderText = "Birth Day";
+            DataGridView1.Columns[4].HeaderText = "Gender";
+            DataGridView1.Columns[5].HeaderText = "Phone";
+            DataGridView1.Columns[6].HeaderText = "Address";
+            DataGridView1.Columns[7].HeaderText = "Avatar";
         }
 
-        //private void DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    UpdateDeleteStudentForm updateDeleteStudentForm = new UpdateDeleteStudentForm();
-        //    // Thứ tự của các cột: id - fname - lname - bd - gender - phone - address - picture
-        //    updateDeleteStudentForm.TextBoxStudentId.Text = DataGridView1.CurrentRow.Cells[0].Value.ToString();
-        //    updateDeleteStudentForm.TextBoxFname.Text = DataGridView1.CurrentRow.Cells[1].Value.ToString();
-        //    updateDeleteStudentForm.TextBoxLname.Text = DataGridView1.CurrentRow.Cells[2].Value.ToString();
-        //    updateDeleteStudentForm.dateTimePicker1.Value = (DateTime)DataGridView1.CurrentRow.Cells[3].Value;
-
-
-        //    if ((DataGridView1.CurrentRow.Cells[4].Value.ToString().Trim() == "Female"))
-        //    {
-        //        updateDeleteStudentForm.RadioButtonFemale.Checked = true;
-        //    }
-        //    else
-        //    {
-        //        updateDeleteStudentForm.RadioButtonMale.Checked = true;
-        //    }
-        //    updateDeleteStudentForm.TextBoxPhone.Text = DataGridView1.CurrentRow.Cells[5].Value.ToString();
-        //    updateDeleteStudentForm.TextBoxAddress.Text = DataGridView1.CurrentRow.Cells[6].Value.ToString();
-
-        //    byte[] pic;
-        //    pic = (byte[])DataGridView1.CurrentRow.Cells[7].Value;
-        //    MemoryStream picture = new MemoryStream(pic);
-        //    updateDeleteStudentForm.PictureBoxStudentImage.Image = Image.FromStream(picture);
-        //    this.Show();
-        //    updateDeleteStudentForm.Show();
-
-        //}
     }
 }

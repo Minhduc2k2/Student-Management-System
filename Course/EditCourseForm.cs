@@ -32,16 +32,16 @@ namespace Student_Management_System
         {
             try
             {
-                string id = ComboBoxCourse.SelectedValue.ToString();
+                string id = ComboBoxCourse.SelectedValue.ToString().Trim();
                 DataTable table = new DataTable();
                 table = course.getCourseById(id);
-                TextBoxLabel.Text = table.Rows[0][1].ToString();
-                NumericUpDownHours.Value = Int32.Parse(table.Rows[0][2].ToString());
-                TextBoxDescription.Text = table.Rows[0][3].ToString();
+                TextBoxLabel.Text = table.Rows[0][1].ToString().Trim();
+                NumericUpDownHours.Value = Int32.Parse(table.Rows[0][2].ToString().Trim());
+                TextBoxDescription.Text = table.Rows[0][3].ToString().Trim();
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message, "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void ComboBoxCourse_SelectedValueChanged(object sender, EventArgs e)

@@ -29,8 +29,8 @@ namespace LoginForm
         {
             try
             {
-                int student_id = Int32.Parse( DataGridView1.CurrentRow.Cells[0].Value.ToString());
-                string course_id = DataGridView1.CurrentRow.Cells[3].Value.ToString();
+                int student_id = Int32.Parse( DataGridView1.CurrentRow.Cells[0].Value.ToString().Trim());
+                string course_id = DataGridView1.CurrentRow.Cells[3].Value.ToString().Trim();
                 if(score.deleteScore(student_id, course_id))
                     MessageBox.Show("Score has been removed", "Remove Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else

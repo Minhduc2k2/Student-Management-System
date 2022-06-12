@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Student_Management_System
@@ -19,6 +20,7 @@ namespace Student_Management_System
 
         MY_DB db = new MY_DB();
         Email email = new Email();
+        string emailRegex = @"^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$";
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             if (radioButtonStudent.Checked)
@@ -139,6 +141,12 @@ namespace Student_Management_System
 
         private void buttonGetPassword_Click(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(textBoxEmail.Text, emailRegex))
+            {
+                MessageBox.Show("Email is InValid", "Get Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (radioButtonStudent.Checked)
             {
 
@@ -165,7 +173,7 @@ namespace Student_Management_System
                         string username = table.Rows[0]["username"].ToString();
                         string password = table.Rows[0]["password"].ToString();
                         string mymail = email.getEmail(username);
-                        if(!mymail.Equals(textBoxEmail.Text.Trim()))
+                        if (!mymail.Equals(textBoxEmail.Text.Trim()))
                         {
                             MessageBox.Show("Email is not the same", "Announcement", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;

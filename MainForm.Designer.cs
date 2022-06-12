@@ -113,7 +113,7 @@ namespace LoginForm
             this.staticsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.staticsToolStripMenuItem.Name = "staticsToolStripMenuItem";
             this.staticsToolStripMenuItem.Size = new System.Drawing.Size(322, 32);
-            this.staticsToolStripMenuItem.Text = "Statics";
+            this.staticsToolStripMenuItem.Text = "Statistics";
             this.staticsToolStripMenuItem.Click += new System.EventHandler(this.staticsToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
@@ -287,7 +287,7 @@ namespace LoginForm
             this.toolStripMenuItem3.ForeColor = System.Drawing.SystemColors.Window;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(281, 32);
-            this.toolStripMenuItem3.Text = "Static Result";
+            this.toolStripMenuItem3.Text = "Statistics Result";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // MainForm

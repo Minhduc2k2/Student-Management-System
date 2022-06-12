@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Student_Management_System
@@ -15,6 +16,7 @@ namespace Student_Management_System
             InitializeComponent();
         }
         Email email = new Email();
+        string emailRegex = @"^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$";
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             //Show Process Bar
@@ -88,22 +90,32 @@ namespace Student_Management_System
             if (!verif())
             {
                 MessageBox.Show("Empty Field", "Add HumanResourse", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if(!int.TryParse(TextBoxId.Text.Trim(),out int _))
+            {
+                MessageBox.Show("ID must be a number", "Add HumanResourse", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if(!Regex.IsMatch(TextBoxEmail.Text, emailRegex))
+            {
+                MessageBox.Show("Email is InValid", "Add HumanResourse", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             try
             {
                 HumanResource humanResource = new HumanResource();
-                int id = int.Parse(TextBoxId.Text);
-                string f_name = TextBoxFname.Text;
-                string l_name = TextBoxLname.Text;
-                string uname = TextBoxUserName.Text;
-                string pwd = TextBoxPassword.Text;
+                int id = int.Parse(TextBoxId.Text.Trim());
+                string f_name = TextBoxFname.Text.Trim();
+                string l_name = TextBoxLname.Text.Trim();
+                string uname = TextBoxUserName.Text.Trim();
+                string pwd = TextBoxPassword.Text.Trim();
                 MemoryStream picture = new MemoryStream();
                 PictureBoxStudentImage.Image.Save(picture, PictureBoxStudentImage.Image.RawFormat);
 
                 if (existUsername())
                 {
                     MessageBox.Show("New HumanResourse username already exist", "Add HumanResourse", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 }
                 else if (existID())
                 {
@@ -122,35 +134,6 @@ namespace Student_Management_System
             {
                 MessageBox.Show(ex.Message, "Add HumanResourse", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void TextBoxFname_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //textBoxNotiFName.Text = "";
-        }
-
-        private void TextBoxLname_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //textBoxNotiLName.Text = "";
-        }
-        private void dateTimePicker1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //textBoxNotiBirthday.Text = "";
-        }
-
-        private void TextBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //textBoxNotiPhone.Text = "";
-        }
-
-        private void TextBoxStudentId_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //textBoxNotiStudentID.Text = "";
-        }
-
-        private void TextBoxAddress_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //textBoxNotiAddress.Text = "";
         }
     }
 }

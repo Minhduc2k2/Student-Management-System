@@ -1,5 +1,4 @@
-﻿using Student_Management_System;
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -88,8 +87,6 @@ namespace LoginForm
             pic = (byte[])DataGridView1.CurrentRow.Cells[7].Value;
             MemoryStream picture = new MemoryStream(pic);
             PictureBoxStudentImage.Image = Image.FromStream(picture);
-            //this.Show();
-            //updateDeleteStudentForm.Show();
 
         }
         bool verif()
@@ -145,7 +142,7 @@ namespace LoginForm
             }
             if (PictureBoxStudentImage.Image == null)
             {
-                MessageBox.Show("Image is not valid", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Image is not valid", "Manage Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 flag = 1;
             }
             if (flag == 0)
@@ -157,37 +154,39 @@ namespace LoginForm
             //Show Process Bar
             ProcessBarForm processBarForm = new ProcessBarForm();
             processBarForm.ShowDialog();
-
-            if (checkRegex())
+            try
             {
-                Student student = new Student();
-                int id = Convert.ToInt32(TextBoxStudentId.Text);
-                string fname = TextBoxFname.Text;
-                string lname = TextBoxLname.Text;
-                DateTime bdate = dateTimePicker1.Value;
-                string phone = TextBoxPhone.Text;
-                string address = TextBoxAddress.Text;
-                string gender;
-                if (RadioButtonMale.Checked)
-                    gender = "Male";
-                else
-                    gender = "FeMale";
-                MemoryStream picture = new MemoryStream();
-                int born_year = dateTimePicker1.Value.Year;
-                int this_year = DateTime.Now.Year;
-
-                PictureBoxStudentImage.Image.Save(picture, PictureBoxStudentImage.Image.RawFormat);
-                if (student.insertStudent(id, fname, lname, bdate, gender, phone, address, picture))
+                if (checkRegex())
                 {
-                    MessageBox.Show("New Student Added", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Student student = new Student();
+                    int id = Convert.ToInt32(TextBoxStudentId.Text);
+                    string fname = TextBoxFname.Text;
+                    string lname = TextBoxLname.Text;
+                    DateTime bdate = dateTimePicker1.Value;
+                    string phone = TextBoxPhone.Text;
+                    string address = TextBoxAddress.Text;
+                    string gender;
+                    if (RadioButtonMale.Checked)
+                        gender = "Male";
+                    else
+                        gender = "FeMale";
+                    MemoryStream picture = new MemoryStream();
+                    int born_year = dateTimePicker1.Value.Year;
+                    int this_year = DateTime.Now.Year;
+
+                    PictureBoxStudentImage.Image.Save(picture, PictureBoxStudentImage.Image.RawFormat);
+                    if (student.insertStudent(id, fname, lname, bdate, gender, phone, address, picture))
+                    {
+                        MessageBox.Show("New Student Added", "Manage Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Error", "Manage Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                    MessageBox.Show("Error", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //else
-            //{
-            //    MessageBox.Show("Empty Fields", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Manage Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void TextBoxFname_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -221,9 +220,9 @@ namespace LoginForm
         private void ButtonEditStudent_Click(object sender, EventArgs e)
         {
 
-            if (checkRegex())
+            try
             {
-                try
+                if (checkRegex())
                 {
                     Student student = new Student();
                     int id = Convert.ToInt32(TextBoxStudentId.Text);
@@ -244,21 +243,16 @@ namespace LoginForm
                     PictureBoxStudentImage.Image.Save(picture, PictureBoxStudentImage.Image.RawFormat);
                     if (student.updateStudent(id, fname, lname, bdate, gender, phone, address, picture))
                     {
-                        MessageBox.Show("Student Edited", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Student Edited", "Manage Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
-                        MessageBox.Show("Error", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Error", "Manage Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            //else
-            //{
-            //    MessageBox.Show("Empty Fields", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Manage Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void ButtonRemoveStudent_Click(object sender, EventArgs e)
@@ -295,9 +289,9 @@ namespace LoginForm
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Please Enter A Valid ID", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -329,11 +323,11 @@ namespace LoginForm
         {
             SaveFileDialog svf = new SaveFileDialog();
             svf.FileName = ("student_" + TextBoxStudentId.Text);
-            if((PictureBoxStudentImage.Image == null))
+            if ((PictureBoxStudentImage.Image == null))
             {
                 MessageBox.Show("No image in the picturebox");
             }
-            else if(svf.ShowDialog() == DialogResult.OK)
+            else if (svf.ShowDialog() == DialogResult.OK)
             {
                 PictureBoxStudentImage.Image.Save((svf.FileName + ("." + ImageFormat.Jpeg.ToString())));
             }
